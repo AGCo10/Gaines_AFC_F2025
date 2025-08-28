@@ -27,6 +27,7 @@ if (input === null || Number.isNaN(birthYear)) {
   const age = calculateAge(birthYear);
 
   // Step 9: Display or print the users age using a generic string statement concatenated with the age variable.
+    // Note that this command is not ACTUALLY a string concatenation because it does not use a + sign between the string and variable.
   console.log("Your age is:", age);
 }
 
