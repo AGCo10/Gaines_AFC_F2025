@@ -1,0 +1,115 @@
+table {
+    border-collapse: collapse; /* or separate */
+    border-spacing: 10px;       /* Only if using separate */
+
+    /* Style valid inputs with green background */
+    input:valid {
+        background-color: #e0ffe0;
+    }
+
+    /* Style invalid fields while typing */
+    input:focus:invalid {
+        background-color: #ffe0e0;
+    }
+}
+
+form {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: auto;
+}
+
+label {
+    display: block;
+    font-size: 1rem;
+    margin-top: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+
+button {
+    margin-top: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 12px;
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Class selector: apply to any element with class="btn" */
+.btn { background: #FFD700; color: #000; padding: 0.5rem 1rem; }
+
+/* Multiple classes can stack */
+.card { border: 1px solid #222; padding: 1rem; }
+.highlight { background: #FFFCDF; }
+
+/* ID selector: highly specific, intended for one element */
+#site-header { background: #0b0b0b; color: #e6e6e6; padding: 1rem; }
+
+/* Unique anchor target for skip links or JS hooks */
+#main-content { scroll-margin-top: 80px; }
+
+/* Style only email inputs */
+input[type="email"] { border: 2px solid #FFCC33; padding: 0.4rem; }
+
+/* Style external links that start with http */
+a[href^="http"] { text-decoration: underline; }
+
+/* Change link color on hover for clear feedback */
+a:hover { color: #FF0000; }
+
+/* High-visibility focus ring for keyboard users */
+button:focus { outline: 3px solid #39FF14; outline-offset: 2px; }
+
+/* Descendant (space) notes. gives a tag
+Any <em> inside .note, at any depth */
+.note em { color: #FFCC33; font-weight: 700; }
+
+/* Only direct li children of .menu (not nested lists) */
+.menu > li { padding: 0.5rem; border-bottom: 1px solid #222; }
+
+/* Add spacing to a paragraph that immediately follows an h2 */
+h2 + p { margin-top: 0.25rem; color: #d8d8d8; }
+
+/* All paragraphs after .alert within the same parent */
+.alert ~ p { color: #999; }
+
+/* Type Selector */
+h1 {
+    color: #FFCC33; /* gold headings */
+}
+
+/* Class Selector */
+.highlight {
+    background-color: #0000FF; /* blue highlight */
+    color: white;
+}
+
+/* ID Selector */
+#nav {
+    background-color: #333333; /* dark navigation bar */
+    border-bottom: 3px solid #FFCC33;
+}
+
+/* Psuedo-class */
+a:hover {
+    color: #FF0000; /* red on hover */
+}
+
+/* Psuedo-element */
+p::first-letter {
+    color: #39FF14; /* neon green initial */
+    border-bottom: 1px solid #39FF14;
+}

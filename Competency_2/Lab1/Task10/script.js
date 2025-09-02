@@ -45,7 +45,8 @@ console.log("Formatted date:", formattedDate);
 // Step 7: Assign a date variable named graduationDate the value (November 13, 2025), which is our hard-coded graduation day.
 const graduationDate = new Date("2025-11-13");
 
-// Determine how many days exist between today's get and the graduation day, and calculate that time using the difference in days / the time in a day. Store this value as daysRemaining (number) variable.
+// Determine how many days exist between today's get and the graduation day, and calculate that time using the difference in days / the time in a day.
+// Store this value as daysRemaining (number) variable.
 const diff = graduationDate - today;
 const daysRemaining = Math.ceil(diff / (1000 * 60 * 60 * 24));
 
