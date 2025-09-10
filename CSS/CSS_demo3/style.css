@@ -1,0 +1,23 @@
+h1:hover {
+    background-color: red;
+}
+
+button:hover {
+    color: firebrick;
+}
+
+input:hover {
+    border: 10px dotted blue;
+}
+
+input:focus {
+    background-color: yellow;
+}
+
+input::placeholder {
+    background-color: black;
+}
+
+a[target = "_blank"] {
+
+}

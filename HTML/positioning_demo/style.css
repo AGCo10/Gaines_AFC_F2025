@@ -1,0 +1,37 @@
+.div1 {
+    height: 200px;
+    width: 200px;
+    z-index: -1;
+    background-color: green;
+    position: absolute;
+    top: 80px;
+    left: 50px;
+
+
+}
+
+.div2 {
+    height: 200px;
+    width: 200px;
+    background-color: red;
+    display: inline-block;
+    position: relative;
+    top: 500px;
+}
+
+.container {
+    background-color: gray;
+    height: 500px;
+    width: 250px;
+    position: absolute;
+    right: 10px;
+    border: black solid 1px;
+}
+
+.innerdiv {
+    background-color: yellow;
+    height: 100px;
+    width: 100px;
+    border: black solid 1px;
+    position: relative;
+}

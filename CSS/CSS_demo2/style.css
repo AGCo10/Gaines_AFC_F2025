@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: x-large;
+    font-family: "Chakra Petch", sans-serif;
+}
+
+
+a[href = "https://www.google.com"] {
+    color: orange
+}
+
+body {
+    background-color: #aa9c9c;
+    color: #8B5B29;
+    font-family: "Chakra Petch", sans-serif;
+}
+
+h1, h2, h3 {
+    color: #6F9F3A;
+}
+
+a {
+    color: #D92D2E;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #E4C300;
+}
+
+.button {
+    background-color: #6F9F3A;
+    color: #bd5858;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #D92D2E;
+}
+
+p {
+    padding: 10px 10px ;
+    margin: 50px 50px 50px 50px;
+    border-style: groove;
+    border-width: 50px;
+    font-family: "Story Script", sans-serif;
+}
+
+/*.story-script-regular {*/
+/*    font-family: "Story Script", sans-serif;*/
+/*    font-weight: 400;*/
+/*    font-style: normal;*/
+/*}*/
