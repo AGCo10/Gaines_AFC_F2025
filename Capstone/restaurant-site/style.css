@@ -1,20 +1,40 @@
+/*Color Palette: Cream and Black is the general theme.
+Cream text on black background for headers and sections, inverse on p tags and body*/
+
 h1, nav , div {
     text-align: center;
 }
+img {
+    margin: 12px;
+}
+
+div {
+    /*Temp Tester Settings to help visualize Layouts*/
+    border: 3px black solid;
+    margin: 10px;
+    /*Delete when finalized*/
+}
+
+h1 {
+    /*Temp Tester Settings to help visualize Layouts*/
+    border: 3px indianred solid;
+    /*Delete when finalized*/
+    font-size: xxx-large !important;
+    font-weight: bold !important;
+    background-color: black;
+    color: var(--text-color) !important;
+}
 
 p {
-
     text-align: center;
     font-weight: bold;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 15px;
     width: 80%;
     margin: 10px auto 10px auto;
-
-}
-
-shade {
-    color: forestgreen;
+    /*Temp Tester Settings to help visualize Layouts*/
+    border: 2px blueviolet solid;
+    /*Delete when finalized*/
 }
 
 body {
@@ -24,4 +44,28 @@ body {
     background-attachment: fixed;
 }
 
->
+.mission_statement
+{
+    width: 200px;
+}
+
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: xx-large;
+}
+
+:root {
+    --primary-black: #000000 !important;
+    --secondary-black: #141414 !important;
+    --background-cream: #F5EAB6 !important;
+    --text-color: #FFFDD3 !important;
+}
+
+.navbar-brand {
+    background-image: url("images/brand.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
