@@ -10,158 +10,167 @@
     <title>Richard's Pickles - Hiring</title>
 
     <link rel="stylesheet" href="style.css">
+    <!-- The following links us to the bootstrap CSS resources -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- The following links us to the Google fonts I am using -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
-<!--The H1-H6 tags should not be used for styling simply because they can be semantically changed at any time.
- They are good for setting areas of content-->
-<h1 id = "Richard's Pickles_Hiring" class = "bebas-neue-regular">Become a Pickler</h1>
+    <!--The H1-H6 tags should not be used for styling simply because they can be semantically changed at any time.
+     They are good for setting areas of content-->
+    <div>
+    <h1 id = "Richard's Pickles_Hiring" class = "bebas-neue-regular">Become a Pickler</h1>
 
-<!--The follow nav is from the bootstrap toolkit. It only works because I placed the CSS link in the head and the JS link in the body of this HTML-->
-<nav class="navbar navbar-expand-lg bg-body-tertiary bebas-neue-regular">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#"></a>
+    <!--The follow nav is from the bootstrap toolkit. It only works because I placed the CSS link in the head and the JS link in the body of this HTML-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bebas-neue-regular">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="images/brand.jpg" style="height: auto; width: 30px" alt="brand"></a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html">Landing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="menu.html">Menu</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <!--Note: The href on this <a> tag should reference this sheet and not take you somewhere else.
-                    Additionally, The "botton" is what will trigger the dropdown-->
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        More Resources
-                    </a>
-                    <!--The following table is the body of the dropdown. It is interactive due to the use of JS-->
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="hiring.html">Hiring</a></li>
-                        <li><a class="dropdown-item" href="#">Our Story</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Got Ideas?</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Landing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <!--Note: The href on this <a> tag should reference this sheet and not take you somewhere else.
+                        Additionally, The "botton" is what will trigger the dropdown-->
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            More Resources
+                        </a>
+                        <!--The following table is the body of the dropdown. It is interactive due to the use of JS-->
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="hiring.html">Hiring</a></li>
+                            <li><a class="dropdown-item" href="#">Our Story</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Got Ideas?</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- quote to add to the top of the page -->
+    <div class = "container">
+        <div class = "row" height>
+            <div class = "col-lg-4 col-sm-4" style="height: 90px"></div>
+            <div class = "col-lg-4 col-sm-4" style="height: 90px">Are Your Pickles... BORING?</div>
+            <div class = "col-lg-4 col-sm-4" style="height: 90px"></div>
+
+        </div>
+        <div class = "row">
+            <div class = "col-lg-12 col-sm-12" style="height: 90px">We came together to do ONE thing: Make delicious pickles for all flavor palettes.</div>
+
+        </div>
+        <div class = "row">
+            <div class = "col-lg-4 col-sm-4" style="height: 90px"></div>
+            <div class = "col-lg-4 col-sm-4" style="height: 90px">Do you have what it takes?</div>
+            <div class = "col-lg-4 col-sm-4" style="height: 90px"></div>
+        </div>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#apply_here"> GET STARTED! </button>
+
+    </div>
+
+    <!-- Modal that will hold our form -->
+    <div class="modal fade" id="apply_here" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header fs-1 form-head-foot" id="exampleModalLabel"> Pickler Application
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body form-body">
+                    <form action="/submit" method="POST" class="row g-3">
+                        <div class="col-md-6">
+                            <label for="first_name" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="first_name" name="first_name" required placeholder="First Name">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="last_name" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name (optional)">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="user_email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="user_email" name="user_email" required placeholder="Email">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="phone_number" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone_number" name="phone_number" placeholder="111-222-3333" pattern="^\d{3}-\d{3}-\d{4}$">
+                        </div>
+                        <div class="col-12">
+                            <label for="address_1" class="form-label">Street Address</label>
+                            <input type="text" class="form-control" id="address_1" name="address_1" required placeholder="Address 1">
+                        </div>
+                        <div class="col-12">
+                            <label for="address_2_optional" class="form-label">Street Address 2</label>
+                            <input type="text" class="form-control" id="address_2_optional" name="address_2_optional" placeholder="Address 2 (optional)">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="city" class="form-label">City</label>
+                            <input type="text" class="form-control" id="city" name="city" required placeholder="City" maxlength="29">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="state" class="form-label">State</label>
+                            <select name="state" id="state" class="form-select" required>
+                                <option value="" disabled selected>Choose...</option>
+                                <option value="new_york">NY</option>
+                                <option value="texas">TX</option>
+                                <option value="illinois">IL</option>
+                                <option value="missouri">MO</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="zip" class="form-label">Zip</label>
+                            <input type="text" class="form-control" id="zip" name="zip" required pattern="\d{5}" placeholder="Zip">
+                        </div>
+                        <div class="col-6">
+                            <label for="age" class="form-label">Age</label>
+                            <input type="number" class="form-control" id="age" name="age" required min="21" max="99" placeholder="Age">
+                        </div>
+                        <div class="col-6">
+                            <label for="birthdate" class="form-label">Birthday</label>
+                            <input type="date" class="form-control" id="birthdate" name="birthdate">
+                        </div>
+                        <fieldset class="col-12">
+                            <legend>Are you married?</legend>
+                            <div>
+                                <input type="radio" id="married_yes" name="married" value="Yes">
+                                <label for="married_yes">YES</label>
+                                <input type="radio" id="married_no" name="married" value="No" checked>
+                                <label for="married_no">NO</label>
+                            </div>
+                        </fieldset>
+                        <div class="col-12">
+                            <textarea name="more_info" id="more_info" class="form-control" cols="30" rows="4" placeholder="Give us your Comments"></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="reset" class="btn btn-secondary">Reset</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer" style="background-color: var(--background-cream)">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
-</nav>
 
-<!-- quote to add to the top of the page -->
-<p style="text-align: center">Why should pickles be Boring?</p>
-<p style="text-align: center"> We came together to do ONE thing: Make delicious pickles for all flavor palettes. <br>
-Do you have what it takes?</p>
-
-<form action="/submit" method="POST">
-    <!-- Form contents go here -->
-    <!-- Text input for a name -->
-    <!-- Grouping contact information in a fieldset -->
-    <fieldset>
-        <legend>Contact Info</legend>
-        <!-- First name -->
-        <label for="first_name">First Name</label>
-        <input type="text" required id="first_name" name="first_name" placeholder="First Name" minlength="1" maxlength="20">
-
-        <label for="last_name">Last Name</label>
-        <input type="text" id="last_name" name="last_name" placeholder="Last Name (optional)" minlength="1" maxlength="20"><br>
-
-        <label for="phone_number">Phone Number</label>
-        <input type="tel" id="phone_number" name="phone_number" placeholder="111-222-3333" pattern = "^\d{3}-\d{3}-\d{4}$
-"><br>
-
-        <label for="user_email">Email</label>
-        <input type="email" id="user_email" name="user_email" placeholder="Email"><br>
-
-        <label for="age">Age</label>
-        <input type="number" required id="age" name="age" placeholder="Age" min="21" max="99">
-
-        <label for="birthdate">Birthday</label>
-        <input type="date" id="birthdate" name="birthdate" placeholder="Birthday">
-
-        <fieldset>
-            <legend>Are you married?</legend>
-            <input type="radio" id="yes" name="married" value="Yes">
-            <label for="yes">YES</label><br>
-            <input type="radio" id="no" name="married" value="No" checked>
-            <label for="no">NO</label><br>
-        </fieldset>
-    </fieldset>
-
-    <fieldset>
-        <legend>Home Address</legend>
-        <label for="address_1">Street Address</label>
-        <input type="text" required id="address_1" name="address_1" placeholder="Address 1"> <br>
-
-        <label for="address_2_optional">Street Address 2</label>
-        <input type="text" id="address_2_optional" name="address_2_optional" placeholder="Address 2 (optional)">
-        <br>
-        <label for="city">City</label>
-        <input type="text" required id="city" name="city" placeholder="City" maxlength="29">
-
-        <label for="state">State</label>
-        <select name="State" id="state">
-            <option value="blank"></option>
-            <option value="new_york">NY</option>
-            <option value="texas">TX</option>
-            <option value="illinois">IL</option>
-            <option value="missouri">MO</option>
-        </select>
-    </fieldset>
-
-    <fieldset>
-        <legend>Account Setup</legend>
-        <label for="password">Password</label>
-        <input type="password" required name = "password" id = "password" placeholder="Please Enter a Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?:{}|<>])[A-Za-z\d!@#$%^&*(),.?:{}|<>]{8,12}$">
-        <p>
-            Password must be 8-12 characters long and:
-        </p>
-        <ul>
-            <li>include at least one lowercase letter</li>
-            <li>include at least one uppercase letter</li>
-            <li>include at least one special symbol</li>
-            <li>include at least one number</li>
-        </ul>
-
-
-        <fieldset>
-            <legend>Please Select Your Favorite Colors </legend>
-            <input type="checkbox" id="blue" name="blue" value="Blue">
-            <label for="blue">Blue</label><br>
-            <input type="checkbox" id="green" name="green" value="Green">
-            <label for="green">Green</label><br>
-            <input type="checkbox" id="orange" name="orange" value="Orange">
-            <label for="orange">Orange</label><br>
-            <input type="checkbox" id="purple" name="purple" value="Purple">
-            <label for="purple">Purple</label><br>
-            <input type="checkbox" id="red" name="red" value="Red">
-            <label for="red">Red</label><br>
-        </fieldset>
-    </fieldset>
-
-    <div>
-        <textarea name="more_info" id="more_info" cols="30" rows="4">Give us your Comments</textarea>
+    <!-- imported JS for bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     </div>
-
-    <button type = "submit"> Submit</button>
-    <button type = "reset"> Reset</button>
-
-</form>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-
 </body>
 </html>
