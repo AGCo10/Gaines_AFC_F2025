@@ -21,11 +21,14 @@
 <body>
 <!--The H1-H6 tags should not be used for styling simply because they can be semantically changed at any time.
  They are good for setting areas of content-->
-<h1 id = "Richard's_Pickles_Menu" class = "bebas-neue-regular">Our Legendary Pickle Menu</h1>
+<h1 id = "Richard's Pickles_Landing" class = "bebas-neue-regular center">Richard's Pickles</h1>
+
 <!--The follow nav is from the bootstrap toolkit. It only works because I placed the CSS link in the head and the JS link in the body of this HTML-->
-<nav class="navbar navbar-expand-lg bg-body-tertiary bebas-neue-regular">
+<nav class="navbar navbar-expand-lg bg-body-tertiary bebas-neue-regular border-cream">
+
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="images/brand.jpg"style="height: auto; width: 30px" alt="brand"></a>
+        <a class="navbar-brand" href="#"><img src="images/brand.jpg" style="height: auto; width: 30px" alt="brand"></a>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -60,87 +63,68 @@
     </div>
 </nav>
 
-<!-- Angry Pickle -->
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="The Angry Pickle">
-    <div class="card-body">
-        <h5 class="card-title">The Angry Pickle</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-</div>
+<div class = "background-pic Carousel">
+    <h3>Whats in the Pickle Jar</h3>
+    <div class = "container Frame-Visualizer-Red">
+        <div id="menuCarousel" class="carousel carousel-dark slide" style="height: 500px">
+            <div class="carousel-indicators bg-body-tertiary">
+                <button type="button" data-bs-target="#menuCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#menuCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#menuCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#menuCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#menuCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
 
-<!-- Pirate Pickle -->
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="Pirate Pickle">
-    <div class="card-body">
-        <h5 class="card-title">Pirate Pickle</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-</div>
+            </div>
 
-<!-- Pre-Pickle -->
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="Pre-Pickle">
-    <div class="card-body">
-        <h5 class="card-title">Pre-Pickle</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-</div>
+            <div class="carousel-inner Carousel-fit Frame-Visualizer-Black">
+                <div class="carousel-item active Frame-Visualizer-Blue" data-bs-interval="10000">
+                    <img src="images/angry_pickle.jpeg" class="d-block w-100" alt="angry pickle meal">
+                    <div class="carousel-caption d-none d-md-block background-dull-highlight">
+                        <h5 class = "Carousel-card-text">The Angry Pickle</h5>
+                        <h5 class = "Carousel-card-text">A pickle so spicy it makes jalapeños cry. Warning: may cause spontaneous yelling!</h5>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="images/double_stuff_pickle.jpeg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block background-dull-highlight">
+                        <h5 class = "Carousel-card-text">The Double Stuff</h5>
+                        <h5 class = "Carousel-card-text">Twice the fun! A pickle stuffed with itself and a secret blend of spices that’ll make you do a double take!</h5>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="images/pirate_pickle.jpeg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block background-dull-highlight">
+                        <h5 class = "Carousel-card-text">The Angry Pickle</h5>
+                        <h5 class = "Carousel-card-text">A treasure chest of flavor! This pickle is packed with rum-soaked spices, perfect for swashbucklers!</h5>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="images/pre-pickle.jpeg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block background-dull-highlight">
+                        <h5 class = "Carousel-card-text">The Pre-Pickle</h5>
+                        <h5 class = "Carousel-card-text">What do you call a cucumber that hasn't been pickled yet? This delightful tease will leave you craving more!</h5>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="images/shake_and_bake_pickle.jpeg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block background-dull-highlight">
+                        <h5 class = "Carousel-card-text">Shake and Baked</h5>
+                        <h5 class = "Carousel-card-text">These pickles come with a side of nostalgia! Shake 'em up for that classic crunch, and bake 'em for a surprise!</h5>
+                    </div>
+                </div>
+            </div>
 
-<!-- Shake-and-Bake Pickle -->
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="Shake-and-Bake Pickle">
-    <div class="card-body">
-        <h5 class="card-title">Shake-and-Bake Pickle</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+            <button class="carousel-control-prev" type="button" data-bs-target="#menuCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#menuCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
     </div>
 </div>
-
-<!-- Double-Stuffed Pickle -->
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="Double-Stuffed Pickle">
-    <div class="card-body">
-        <h5 class="card-title">Double-Stuffed Pickle</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-</div>
-<table>
-    <tr>
-        <th>Pickle Name</th>
-        <th>Description</th>
-        <th>Price</th>
-    </tr>
-    <tr>
-        <td>The Angry Pickle</td>
-        <td>A pickle so spicy it makes jalapeños cry. Warning: may cause spontaneous yelling!</td>
-        <td>$3.00</td>
-    </tr>
-    <tr>
-        <td>The Pirate</td>
-        <td>A treasure chest of flavor! This pickle is packed with rum-soaked spices, perfect for swashbucklers!</td>
-        <td>$4.50</td>
-    </tr>
-    <tr>
-        <td>A Pre-Pickle</td>
-        <td>What do you call a cucumber that hasn't been pickled yet? This delightful tease will leave you craving more!</td>
-        <td>$2.00</td>
-    </tr>
-    <tr>
-        <td>Shake and Bake</td>
-        <td>These pickles come with a side of nostalgia! Shake 'em up for that classic crunch, and bake 'em for a surprise!</td>
-        <td>$3.50</td>
-    </tr>
-    <tr>
-        <td>Double Stuffed</td>
-        <td>Twice the fun! A pickle stuffed with itself and a secret blend of spices that’ll make you do a double take!</td>
-        <td>$4.00</td>
-    </tr>
-</table>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>

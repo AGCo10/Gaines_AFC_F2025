@@ -9,20 +9,14 @@ img {
     margin: 12px;
 }
 
-div {
-    /*Temp Tester Settings to help visualize Layouts*/
-    border: 1px black solid;
-    /*Delete when finalized*/
-}
 
 h1 {
-    /*Temp Tester Settings to help visualize Layouts*/
-    border: 3px indianred solid;
-    /*Delete when finalized*/
+    margin: auto;
     font-size: xxx-large !important;
     font-weight: bold !important;
     background-color: black;
     color: var(--text-color) !important;
+    height: 100px;
 }
 
 p {
@@ -31,36 +25,14 @@ p {
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 15px;
     width: 80%;
-    margin: 10px auto 10px auto;
-    /*Temp Tester Settings to help visualize Layouts*/
-    border: 2px blueviolet solid;
-    /*Delete when finalized*/
+    margin: auto;
+    border: 2px solid var(--background-cream);
 }
 
-body {
+.background-pic {
     background-image: url("images/artistic_pickles_background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
-}
-
-#background_video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1; /* Behind other content */
-}
-
-.content {
-    position: relative;
-    z-index: 1; /* In front of the video */
-}
-
-.mission_statement {
-    width: 200px;
 }
 
 .bebas-neue-regular {
@@ -95,4 +67,52 @@ body {
     background-size: cover;
     background-attachment: fixed;
     border-radius: 50%;
+}
+
+.center {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+}
+
+.border-cream {
+    border: 5px solid var(--background-cream);
+}
+
+.Carousel {
+    height: max(500px);
+}
+
+.background-dull-highlight {
+    text-align: center;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    width: 80%;
+    margin: auto;
+    border: 2px solid var(--background-cream);
+}
+
+.Carousel-card-text {
+    text-align: center;
+    font-weight: bold;
+    border-radius: 15px;
+    width: 80%;
+    margin: auto;
+}
+
+.Carousel-fit {
+    width: 80% !important;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.Frame-Visualizer-Blue {
+    border: solid blue 5px;
+}
+.Frame-Visualizer-Black {
+    border: solid black 5px;
+}
+.Frame-Visualizer-Red {
+    border: solid red 5px;
 }
