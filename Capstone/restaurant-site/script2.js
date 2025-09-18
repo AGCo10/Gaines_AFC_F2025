@@ -30,14 +30,16 @@ const menuItems = [
         price: 6.99,
     }
 ];
+const usdFormatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
 
 let currentIndex = 0;
 function updateMenu() {
     const item = menuItems[currentIndex];
     document.getElementById('menuImage').src = item.imageURL;
+    document.getElementById('menuImage').alt = item.name;
     document.getElementById('menuName').innerText = item.name;
     document.getElementById('menuDescription').innerText = item.description;
-    document.getElementById('menuPrice').innerText = `$${item.price.toFixed(2)}`;
+    document.getElementById('menuPrice').innerText = usdFormatter.format(`${item.price.toFixed(2)}`);
 }
 
 function prevImage() {

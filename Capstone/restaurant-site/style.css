@@ -1,6 +1,10 @@
-/*Color Palette: Cream and Black is the general theme.
+/*
+Color Palette: Cream and Black is the general theme.
 Cream text on black background for headers and sections, inverse on p tags and body
-This should give the site a contemporary/modern aesthetic. Clean and readable.*/
+This should give the site a contemporary/modern aesthetic. Clean and readable.
+Also, I like the simple Cream on Black color palette
+Perks of being color blind: Everything looks good to me.
+*/
 
 h1, nav , div {
     text-align: center;
@@ -9,6 +13,7 @@ img {
     margin: 12px 12px 12px 12px;
     position: relative;
 }
+
 
 h1 {
     margin: auto;
