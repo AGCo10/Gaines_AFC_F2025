@@ -66,6 +66,7 @@ function validateForm(event) {
         });
         // Log the form data to the console
         console.log(data);
+        this.reset();
     });
     return true;
 }
@@ -75,14 +76,26 @@ formSubmit.addEventListener('submit', validateForm);
 
 // Initialized charCount Variable for the moreInfoArea Event Listener
 const maxLength = 30;
+const maxRows = 4;
+
 moreInfoArea.addEventListener('input', () => {
+    // Limit character length
     if (moreInfoArea.value.length > maxLength) {
         moreInfoArea.value = moreInfoArea.value.slice(0, maxLength);
     }
+
+    // Limit the number of rows
+    const rows = moreInfoArea.value.split('\n').length;
+    if (rows > maxRows) {
+        const trimmedValue = moreInfoArea.value.split('\n').slice(0, maxRows).join('\n');
+        moreInfoArea.value = trimmedValue;
+    }
+
     const currentLength = moreInfoArea.value.length;
     const remainingChars = maxLength - currentLength;
     charCount.textContent = `${remainingChars}`;
-    // color the remaining characters
+
+    // Color the remaining characters
     if (remainingChars <= 0) {
         charCount.style.color = 'red';
     } else {
