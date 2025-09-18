@@ -8,7 +8,7 @@ const formRequired = [
     document.getElementById('phone_number'),
     document.getElementById('age')
 ];
-
+const passwordField = document.getElementById("password");
 
 const ageField = document.getElementById('age')
 const formSubmit = document.getElementById('application')
@@ -21,6 +21,17 @@ phoneEntry.addEventListener('blur', () => {
     if (!phoneFormat.test(phoneValue) && phoneValue !== '') {
         alert("Please enter the phone number in the format: 111-222-3333");
         phoneEntry.value = '';
+    }
+});
+
+// Form Validation for password
+passwordField.addEventListener('blur', () => {
+    const passwordValue = passwordField.value;
+    // Regular expression to match the desired phone format
+    const passwordFormat = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?:{}|<>])[A-Za-z\d!@#$%^&*(),.?:{}|<>]{8,12}$/;
+    if (!passwordFormat.test(passwordValue) && passwordValue !== '') {
+        alert("Please enter a valid password in the format.");
+        passwordField.value = '';
     }
 });
 

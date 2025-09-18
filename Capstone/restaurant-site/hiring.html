@@ -173,6 +173,35 @@
                                 <label for="married_no">NO</label>
                             </div>
                         </fieldset>
+                        <fieldset>
+                            <legend>Account Setup</legend>
+                            <label for="password">Password</label>
+                            <input type="password" name = "password" id = "password" placeholder="Please Enter a Password">
+                            <p>
+                                Password must be 8-12 characters long and:
+                            </p>
+                            <ul>
+                                <li>include at least one lowercase letter</li>
+                                <li>include at least one uppercase letter</li>
+                                <li>include at least one special symbol</li>
+                                <li>include at least one number</li>
+                            </ul>
+
+
+                            <fieldset>
+                                <legend>Please Select Your Favorite Colors </legend>
+                                <input type="checkbox" id="blue" name="blue" value="Blue">
+                                <label for="blue">Blue</label><br>
+                                <input type="checkbox" id="green" name="green" value="Green">
+                                <label for="green">Green</label><br>
+                                <input type="checkbox" id="orange" name="orange" value="Orange">
+                                <label for="orange">Orange</label><br>
+                                <input type="checkbox" id="purple" name="purple" value="Purple">
+                                <label for="purple">Purple</label><br>
+                                <input type="checkbox" id="red" name="red" value="Red">
+                                <label for="red">Red</label><br>
+                            </fieldset>
+                        </fieldset>
                         <div class="col-12">
                             <textarea name="more info" id="more_info" class="form-control" cols="30" rows="4" placeholder="Comments"></textarea>
                             <p>Characters remaining: <span id ="charCount">30</span></p>
