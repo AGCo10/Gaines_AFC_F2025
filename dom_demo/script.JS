@@ -11,7 +11,7 @@ image.setAttribute("src", "https://images.dog.ceo/breeds/chow/n02112137_126.jpg"
 // add "click" event listener to btn[0] ONLY
 btn.addEventListener("click", ()=>{
     console.log("In the click")
-    // seconf part of endpoint
+    // second part of endpoint
     let route = "breeds/image/random"
     // uses global base url with local route for a specific endpoint
     let endpoint = `${BASE_URL}/${route}`

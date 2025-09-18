@@ -62,72 +62,33 @@
         </div>
     </div>
 </nav>
-
-<div class = "background-pic Carousel">
-    <h3>Whats in the Pickle Jar</h3>
-    <div class = "container Frame-Visualizer-Red">
-        <div id="menuCarousel" class="carousel carousel-dark slide" style="height: 500px">
-            <div class="carousel-indicators bg-body-tertiary">
-                <button type="button" data-bs-target="#menuCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#menuCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#menuCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#menuCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#menuCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-
-            </div>
-
-            <div class="carousel-inner Carousel-fit Frame-Visualizer-Black">
-                <div class="carousel-item active Frame-Visualizer-Blue" data-bs-interval="10000">
-                    <img src="images/angry_pickle.jpeg" class="d-block w-100" alt="angry pickle meal">
-                    <div class="carousel-caption d-none d-md-block background-dull-highlight">
-                        <h5 class = "Carousel-card-text">The Angry Pickle</h5>
-                        <h5 class = "Carousel-card-text">A pickle so spicy it makes jalapeños cry. Warning: may cause spontaneous yelling!</h5>
-                    </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                    <img src="images/double_stuff_pickle.jpeg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block background-dull-highlight">
-                        <h5 class = "Carousel-card-text">The Double Stuff</h5>
-                        <h5 class = "Carousel-card-text">Twice the fun! A pickle stuffed with itself and a secret blend of spices that’ll make you do a double take!</h5>
-                    </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                    <img src="images/pirate_pickle.jpeg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block background-dull-highlight">
-                        <h5 class = "Carousel-card-text">The Angry Pickle</h5>
-                        <h5 class = "Carousel-card-text">A treasure chest of flavor! This pickle is packed with rum-soaked spices, perfect for swashbucklers!</h5>
-                    </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                    <img src="images/pre-pickle.jpeg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block background-dull-highlight">
-                        <h5 class = "Carousel-card-text">The Pre-Pickle</h5>
-                        <h5 class = "Carousel-card-text">What do you call a cucumber that hasn't been pickled yet? This delightful tease will leave you craving more!</h5>
-                    </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                    <img src="images/shake_and_bake_pickle.jpeg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block background-dull-highlight">
-                        <h5 class = "Carousel-card-text">Shake and Baked</h5>
-                        <h5 class = "Carousel-card-text">These pickles come with a side of nostalgia! Shake 'em up for that classic crunch, and bake 'em for a surprise!</h5>
-                    </div>
-                </div>
-            </div>
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#menuCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#menuCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+<div class = "container " style="height: 900px">
+    <div class = "row">
+        <div class = "bebas-neue-regular col-lg-8 col-sm-12 center" style="height: 125px; margin-top: 50px">Check whats in the brine barrel</div>
+    </div>
+    <div class = "row" style="height: 500px">
+        <div class = "col-lg-6">
+            <img id="menuImage" class = "Menu-Image" src="" alt="Menu Item" />
         </div>
+        <div class = "background-dull-highlight col-lg-6">
+        <h2 id="menuName"></h2>
+        <p id="menuDescription"></p>
+        <p id="menuPrice"></p>
+        </div>
+    <div class = "row">
+        <div class = "col-lg-3"></div>
+        <div class = "col-lg-6">
+            <button class = "col-lg-6 secondary" id="btnPrev">Previous</button>
+            <button class = "col-lg-6 primary" id="btnNext">Next</button>
+        </div>
+        <div class = "col-lg-3"></div>
+    </div>
     </div>
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="script2.js"></script>
 </body>
 </html>

@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <!--The H1-H6 tags should not be used for styling simply because they can be semantically changed at any time.
+<!--The H1-H6 tags should not be used for styling simply because they can be semantically changed at any time.
      They are good for setting areas of content-->
     <div>
         <h1 id = "Richard's Pickles_Landing" class = "bebas-neue-regular center">Richard's Pickles</h1>
@@ -65,33 +65,43 @@
         </nav>
 
     <!-- quote to add to the top of the page -->
-    <div class = "container">
-        <div class = "row" height>
-            <div class = "col-lg-4 col-sm-4" style="height: 90px"></div>
-            <div class = "col-lg-4 col-sm-4" style="height: 90px">Are Your Pickles... BORING?</div>
-            <div class = "col-lg-4 col-sm-4" style="height: 90px"></div>
+        <div class = "container" style="height: 400px">
+            <div class = "row">
+                <div class = "col-lg-2 col-sm-2" style="height: 90px"></div>
+                <div class = "col-lg-8 col-sm-8" style="height: 90px"><h2>Are Your Pickles... BORING?</h2></div>
+                <div class = "col-lg-2 col-sm-2" style="height: 90px"></div>
 
+            </div>
+            <div class = "row">
+
+                <div class = "col-lg-8 col-sm-8">
+                    <h5>Full or Part-Time Team Member</h5>
+                    <h6>Basic Requirements</h6>
+
+                    - Great communication and customer service skills (Must have pleasant/courteous demeanor)
+                    - Ability to function in a high-volume, fast-paced environment
+                    - Clean, neat appearance
+                    - Have reliable transportation
+                    - Able to stand/walk on hard floors for 8 hours
+                    - Flexible work hours and available weekends & holidays (We are closed Thanksgiving & Christmas Day)
+                    - Be able to pass a drug test
+
+                </div>
+                <div class = "col-lg-4 col-sm-4">
+                    <h5>Become a Legendary Pickler!!</h5>
+                    Richard's Pickles is currently seeking highly motivated, positive people to join our team at both the local store and pickle factory. Click below to apply!
+                </div>
+
+            </div>
+            <div class = "row">
+                <div class = "col-lg-4 col-sm-4" style="height: 90px"></div>
+                <div class = "col-lg-4 col-sm-4" style="height: 90px"></div>
+                <div class = "col-lg-4 col-sm-4" style="height: 90px">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#apply_here"> GET STARTED! </button>
+                </div>
+            </div>
         </div>
-        <div class = "row">
-            <div class = "col-lg-12 col-sm-12" style="height: 90px">We came together to do ONE thing: Make delicious pickles for all flavor palettes.</div>
-            <div class = "col-lg-12 col-sm-12" style="height: auto">Welcome to Richard's Pickles, where every bite tells a story! Founded by Richard "Dick" Pickleton, our restaurant is a tribute to the art of pickling that has been cherished in his family for generations.
-                Growing up in a small town, Dick spent his summers in the kitchen with his grandmother, learning the secrets of transforming fresh ingredients into delicious pickled delights. Inspired by her old recipe book, he turned his childhood passion into a dream, aiming to bring unique, flavorful pickles to the bustling culinary scene of the city.
-
-                At Richard's Pickles, we pride ourselves on offering an eclectic array of pickles, from classic dill and bread-and-butter varieties to adventurous options like spicy kimchi and sweet pickled watermelon.
-                Each pickle is crafted with care, using locally sourced ingredients and innovative techniques, ensuring that our offerings are not just tasty but also reflect our commitment to quality and creativity. Our warm and inviting atmosphere makes us a beloved community hub for pickle lovers and food enthusiasts alike.
-
-                To complement our signature pickles, we’ve curated a menu of mouth-watering sides that enhance the pickle experience. From crispy fried pickles with zesty dipping sauces to refreshing pickle slaw and artisanal bread, every dish is thoughtfully designed to elevate your meal. At Richard's Pickles, we celebrate flavors, memories, and the joy of sharing good food with friends and family.
-                Join us for a taste of our passion and discover why we’re the go-to destination for pickle lovers!</div>
-
-        </div>
-        <div class = "row">
-            <div class = "col-lg-4 col-sm-4" style="height: 90px"></div>
-            <div class = "col-lg-4 col-sm-4" style="height: 90px">Do you have what it takes?</div>
-            <div class = "col-lg-4 col-sm-4" style="height: 90px"></div>
-        </div>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#apply_here"> GET STARTED! </button>
-
     </div>
 
     <!-- Modal that will hold our form -->
@@ -102,26 +112,29 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body form-body">
-                    <form action="/submit" method="POST" class="row g-3">
+
+                    <!-- ----Form Entry Begins!---- -->
+
+                    <form action="/submit" id = "application" method="dialog" class="row g-3">
                         <div class="col-md-6">
                             <label for="first_name" class="form-label">First Name</label>
-                            <input type="text" class="form-control" id="first_name" name="first_name" required placeholder="First Name">
+                            <input type="text" class="form-control" id="first_name" name="first name" placeholder="First Name">
                         </div>
                         <div class="col-md-6">
                             <label for="last_name" class="form-label">Last Name</label>
-                            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name (optional)">
+                            <input type="text" class="form-control" id="last_name" name="last name" placeholder="Last Name (optional)">
                         </div>
                         <div class="col-md-6">
                             <label for="user_email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="user_email" name="user_email" required placeholder="Email">
+                            <input type="email" class="form-control" id="user_email" name="email" placeholder="Email">
                         </div>
                         <div class="col-md-6">
                             <label for="phone_number" class="form-label">Phone Number</label>
-                            <input type="tel" class="form-control" id="phone_number" name="phone_number" placeholder="111-222-3333" pattern="^\d{3}-\d{3}-\d{4}$">
+                            <input type="tel" class="form-control" id="phone_number" name="phone number" placeholder="111-222-3333">
                         </div>
                         <div class="col-12">
                             <label for="address_1" class="form-label">Street Address</label>
-                            <input type="text" class="form-control" id="address_1" name="address_1" required placeholder="Address 1">
+                            <input type="text" class="form-control" id="address_1" name="address_1" placeholder="Address 1">
                         </div>
                         <div class="col-12">
                             <label for="address_2_optional" class="form-label">Street Address 2</label>
@@ -129,11 +142,11 @@
                         </div>
                         <div class="col-md-6">
                             <label for="city" class="form-label">City</label>
-                            <input type="text" class="form-control" id="city" name="city" required placeholder="City" maxlength="29">
+                            <input type="text" class="form-control" id="city" name="city" placeholder="City" maxlength="29">
                         </div>
                         <div class="col-md-4">
                             <label for="state" class="form-label">State</label>
-                            <select name="state" id="state" class="form-select" required>
+                            <select name="state" id="state" class="form-select">
                                 <option value="" disabled selected>Choose...</option>
                                 <option value="new_york">NY</option>
                                 <option value="texas">TX</option>
@@ -143,11 +156,11 @@
                         </div>
                         <div class="col-md-2">
                             <label for="zip" class="form-label">Zip</label>
-                            <input type="text" class="form-control" id="zip" name="zip" required pattern="\d{5}" placeholder="Zip">
+                            <input type="text" class="form-control" id="zip" name="zip" pattern="\d{5}" placeholder="Zip">
                         </div>
                         <div class="col-6">
                             <label for="age" class="form-label">Age</label>
-                            <input type="number" class="form-control" id="age" name="age" required min="21" max="99" placeholder="Age">
+                            <input type="number" class="form-control" id="age" name="age" placeholder="Age">
                         </div>
                         <div class="col-6">
                             <label for="birthdate" class="form-label">Birthday</label>
@@ -163,10 +176,12 @@
                             </div>
                         </fieldset>
                         <div class="col-12">
-                            <textarea name="more_info" id="more_info" class="form-control" cols="30" rows="4" placeholder="Give us your Comments"></textarea>
+                            <textarea name="more info" id="more_info" class="form-control" cols="30" rows="4" placeholder="Comments"></textarea>
+                            <p>Characters remaining: <span id ="charCount">30</span></p>
                         </div>
+
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" id = "form_submit" class="btn btn-primary">Submit</button>
                             <button type="reset" class="btn btn-secondary">Reset</button>
                         </div>
                     </form>
@@ -178,8 +193,20 @@
         </div>
     </div>
 
-    <!-- imported JS for bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    </div>
+
+<!-- imported JS for bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src = script.js></script>
 </body>
 </html>
+
+<!-- <div class = "col-lg-12 col-sm-12" style="height: 90px">We came together to do ONE thing: Make delicious pickles for all flavor palettes.</div>
+            <div class = "col-lg-12 col-sm-12" style="height: auto">Welcome to Richard's Pickles, where every bite tells a story! Founded by Richard "Dick" Pickleton, our restaurant is a tribute to the art of pickling that has been cherished in his family for generations.
+                Growing up in a small town, Dick spent his summers in the kitchen with his grandmother, learning the secrets of transforming fresh ingredients into delicious pickled delights. Inspired by her old recipe book, he turned his childhood passion into a dream, aiming to bring unique, flavorful pickles to the bustling culinary scene of the city.
+
+                At Richard's Pickles, we pride ourselves on offering an eclectic array of pickles, from classic dill and bread-and-butter varieties to adventurous options like spicy kimchi and sweet pickled watermelon.
+                Each pickle is crafted with care, using locally sourced ingredients and innovative techniques, ensuring that our offerings are not just tasty but also reflect our commitment to quality and creativity. Our warm and inviting atmosphere makes us a beloved community hub for pickle lovers and food enthusiasts alike.
+
+                To complement our signature pickles, we’ve curated a menu of mouth-watering sides that enhance the pickle experience. From crispy fried pickles with zesty dipping sauces to refreshing pickle slaw and artisanal bread, every dish is thoughtfully designed to elevate your meal. At Richard's Pickles, we celebrate flavors, memories, and the joy of sharing good food with friends and family.
+                Join us for a taste of our passion and discover why we’re the go-to destination for pickle lovers!</div>
+-->
