@@ -23,8 +23,9 @@
 hs_err_pid*
 replay_pid*
 
+.env
 node_modules
 .idea
 .DS_Store
 
-Capstone
+Advanced_Web_Programming/Capstone/Notes_Criteria
