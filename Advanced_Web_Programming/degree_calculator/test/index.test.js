@@ -7,7 +7,7 @@
 // Functionality
 // API Contracts - does it exist?
 
-const {convertFarToCel, convertCelToFar} = require('../src/index')
+const {convertFarToCel, convertCelToFar} = require('../src')
 
 // Section off the main test
 describe ('Main Functions', () => {
