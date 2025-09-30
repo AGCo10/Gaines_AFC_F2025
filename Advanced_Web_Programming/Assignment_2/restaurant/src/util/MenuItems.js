@@ -1,0 +1,32 @@
+const menuItems = [
+    {
+        imageURL: './assets/angry_pickle.jpeg',
+        name: 'Angry Pickle Platter',
+        description: 'Try out extra hot pickle that will have your eyes and mouth watering. Served with a side of our house Cole Slaw and baked beans.',
+        price: 12.99,
+    },
+    {
+        imageURL: './assets/pirate_pickle.jpeg',
+        name: 'Pirates Plunder',
+        description: 'A more robust flavor, these pickles are brined in caribbean rum. Served with a side shrimp, seasoned mango, and cheese cubes.',
+        price: 10.99,
+    },
+    {
+        imageURL: './assets/double_stuff_pickle.jpeg',
+        name: 'Double Stuffed',
+        description: 'Have a pickle, stuffed with pickled crab with gravy. Try some mashed potatoes and corn on the side.',
+        price: 8.99,
+    },
+    {
+        imageURL: './assets/shake_and_bake_pickle.jpeg',
+        name: 'Shake and Bake',
+        description: 'Everybody loves a fried pickle, so try ours! Served with marinara and lime.',
+        price: 6.99,
+    },
+    {
+        imageURL: './assets/pre-pickle.jpeg',
+        name: 'Pre-Pickle',
+        description: "How about a pickle that hasn't been brined yet? Enjoy a sliced and seasoned cucumber served with crab on a bed of house salad.",
+        price: 6.99,
+    }
+];

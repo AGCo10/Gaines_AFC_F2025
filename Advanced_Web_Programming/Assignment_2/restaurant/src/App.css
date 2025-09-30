@@ -35,7 +35,7 @@ p {
 }
 
 body {
-    background-image: url("assets/artistic_pickles_background.jpg");
+    background-image: url("images/artistic_pickles_background.jpg");
     background-repeat: no-repeat;
     background-size: cover ;
 }
@@ -68,7 +68,7 @@ body {
 }
 
 .navbar-brand {
-    background-image: url("assets/brand.jpg");
+    background-image: url("images/brand.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
