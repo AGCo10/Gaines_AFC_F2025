@@ -1,4 +1,4 @@
-const hiringForm = () => {
+const HiringForm = () => {
     
     
     return(
@@ -11,8 +11,6 @@ const hiringForm = () => {
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body form-body">
-
-                        // ----Form Entry Begins!---- 
 
                         <form action="/submit" id = "application" method="dialog" className="row g-3">
                             <div className="col-md-6">
@@ -121,3 +119,5 @@ const hiringForm = () => {
             </div>
         </div>)
 }
+
+export default HiringForm ;

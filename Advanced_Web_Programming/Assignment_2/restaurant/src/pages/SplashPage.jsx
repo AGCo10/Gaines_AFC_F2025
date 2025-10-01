@@ -17,8 +17,8 @@ const SplashPage = () => {
                     />
                 </div>
 
-                <div className="bebas-neue-regular col-lg-8 col-sm-8" style={{backgroundColor: 'var(--primary-black)'}}>
-                    <p style={{marginTop: '50px'}}>
+                <div className="bebas-neue-regular col-lg-8 col-sm-8">
+                    <p>
                         Richard's pickles strives to bring a unique addition to the restaurants in our local area: A
                         Pickle Entree. Healthy, lean, and wildly tasteful, Richard's Pickles are a delightful change to
                         the routine.

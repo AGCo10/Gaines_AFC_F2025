@@ -1,24 +1,8 @@
-import {menuItems} from '../components/MenuTable.jsx';
 import {Table} from 'reactstrap'
-const MenuPage = () => {
-    const MenuItemsTabled = menuItems.map((element, index) => {
-        return(
-                <tr key = {index}>
-                    <th scope="row">
-                    </th>
-                    <td>
-                        {element.name}
-                    </td>
-                    <td>
-                        {element.description}
-                    </td>
-                    <td>
-                        {element.price}
-                    </td>
-                </tr>
-        )
-    })
+import 'bootstrap/dist/css/bootstrap.min.css';
 
+
+const MenuPage = () => {
     const menuItems = [
         {
             imageURL: './assets/angry_pickle.jpeg',
@@ -51,42 +35,56 @@ const MenuPage = () => {
             price: 6.99,
         }
     ];
-    return (
-        // The whole page Starts here
-        <>
 
-            <div className="container " style="height: 900px">
-            <div className="row">
-                <div className="bebas-neue-regular col-lg-8 col-sm-12 center"
-                     style="height: 125px; margin-top: 50px">Check whats in the brine barrel
+    const MenuItemsTabled = menuItems.map((element, index) => {
+        return(
+            <tr key = {index}>
+                <td>
+                    {element.name}
+                </td>
+                <td>
+                    {element.description}
+                </td>
+                <td>
+                    {element.price}
+                </td>
+            </tr>
+        )
+    })
+
+    return (
+        <>
+            <div className="container " style={{height: "90px"}}>
+                <div className="row">
+                    <div className="bebas-neue-regular col-lg-12 col-sm-12 center"
+                         style={{height: "90px"}}>Check whats in the brine barrel
+                    </div>
+                </div>
+                <div className="row" style={{height: "90px"}} >
+                    <div className="col-lg-12 col-sm-12">
+                        <Table striped>
+                            <thead>
+                            <tr>
+                                <th>
+                                    Item Name
+                                </th>
+                                <th>
+                                    Item Description
+                                </th>
+                                <th>
+                                    Price
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {MenuItemsTabled}
+                            </tbody>
+                        </Table>
+                    </div>
                 </div>
             </div>
-            <!-- The Menu Table begins -->
-            <div className="row" style="height: 500px" >
-                <div className="col-lg-12">
-                    <Table striped>
-                        <thead>
-                        <tr>
-                            <th>
-                                Item Name
-                            </th>
-                            <th>
-                                Item Description
-                            </th>
-                            <th>
-                                Price
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {MenuItemsTabled}
-                        </tbody>
-                    </Table>
-                </div>
-            </div>
-            <!-- The Menu Table begins -->
-        </div>
         </>
-        // The whole page ends here
     ) ;
 }
+
+export default MenuPage ;
