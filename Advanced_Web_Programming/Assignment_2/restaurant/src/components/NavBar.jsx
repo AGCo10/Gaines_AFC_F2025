@@ -19,7 +19,7 @@ const NavBar = () => {
     const webLinksDropdown = webLinks.map((element,index) => {
         return(
             <NavItem key = {index}>
-                <NavLink href={element.link}>{element.displayName}</NavLink>
+                <NavLink href={element.link} className="Navbar-Options">{element.displayName}</NavLink>
             </NavItem>
         )
     })
@@ -30,7 +30,7 @@ const NavBar = () => {
 
     return (
         <>
-            <div className="row border-cream">
+            <div className="row border-cream Navbar-Background_Light">
                 <Navbar color="faded" light>
                     <NavbarBrand href="/" className=" me-auto"><img src = {brand} className="navbar-brand_img" alt={"Brand"}/>
                     </NavbarBrand>
