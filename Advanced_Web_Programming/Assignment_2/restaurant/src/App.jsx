@@ -1,15 +1,13 @@
 import { useState } from 'react'
 import './App.css'
 import {Outlet} from "react-router-dom";
-import SplashPage from "./pages/SplashPage.jsx";
 import NavBar from "./components/NavBar.jsx"
-import MenuPage from "./pages/MenuPage.jsx";
 
 const App = () => {
 
   return (
     <>
-        <h1>I am the Restaurant App</h1>
+        <h1>Richard's Pickles</h1>
         <NavBar />
         <div>
             <Outlet />
@@ -18,4 +16,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App ;
