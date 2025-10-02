@@ -30,7 +30,7 @@ const NavBar = () => {
 
     return (
         <>
-            <div className="row">
+            <div className="row border-cream">
                 <Navbar color="faded" light>
                     <NavbarBrand href="/" className=" me-auto"><img src = {brand} className="navbar-brand_img" alt={"Brand"}/>
                     </NavbarBrand>

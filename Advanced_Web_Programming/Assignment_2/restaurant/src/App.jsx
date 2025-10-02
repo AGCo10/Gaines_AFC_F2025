@@ -2,12 +2,13 @@ import { useState } from 'react'
 import './App.css'
 import {Outlet} from "react-router-dom";
 import NavBar from "./components/NavBar.jsx"
+import Header from "./components/Header.jsx";
 
 const App = () => {
 
   return (
     <>
-        <h1>Richard's Pickles</h1>
+        <Header />
         <NavBar />
         <div>
             <Outlet />
