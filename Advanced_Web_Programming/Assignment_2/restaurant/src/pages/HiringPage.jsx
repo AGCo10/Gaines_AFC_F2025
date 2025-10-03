@@ -1,3 +1,4 @@
+import HiringForm from "../components/HiringForm.jsx";
 
 const HiringPage = () => {
 
@@ -36,9 +37,7 @@ const HiringPage = () => {
                 <div className="col-lg-4 col-sm-4" style={{height: "90px"}}></div>
                 <div className="col-lg-4 col-sm-4" style={{height: "90px"}}></div>
                 <div className="col-lg-4 col-sm-4" style={{height: "90px"}}>
-                    <button type="button" className="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#apply_here"> GET STARTED!
-                    </button>
+                    <HiringForm />
                 </div>
             </div>
         </div>
