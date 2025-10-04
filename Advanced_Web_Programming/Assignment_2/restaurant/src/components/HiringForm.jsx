@@ -45,13 +45,13 @@ const HiringForm = (args) => {
                                 </div>
                                 <div className="col-12">
                                     <label htmlFor="address_2_optional" className="form-label">Street Address 2</label>
-                                    <input type="text" className="form-control" id="address_2_optional" name="address2" maxLength={30}
+                                    <input type="text" required={false} className="form-control" id="address_2_optional" name="address2" maxLength={30}
                                            placeholder="Address 2 (optional)"/>
                                 </div>
                                 <div className="col-md-6">
                                     <label htmlFor="city" className="form-label">City</label>
                                     <input type="text" required={true}  className="form-control" id="city" name="city" placeholder="City"
-                                           maxLength="29"/>
+                                           maxLength={29}/>
                                 </div>
                                 <div className="col-md-4">
                                     <label htmlFor="state" className="form-label">State</label>
@@ -65,7 +65,7 @@ const HiringForm = (args) => {
                                 </div>
                                 <div className="col-md-2">
                                     <label htmlFor="zip" className="form-label">Zip</label>
-                                    <input type="text" required={true} className="form-control" id="zip" name="zip" pattern="\d{5}"
+                                    <input type="text" required={false} className="form-control" id="zip" name="zip" pattern="\d{5}"
                                            placeholder="Zip"/>
                                 </div>
                                 <div className="col-6">
@@ -75,7 +75,7 @@ const HiringForm = (args) => {
                                 </div>
                                 <div className="col-6">
                                     <label htmlFor="birthdate" className="form-label">Birthday</label>
-                                    <input type="date" className="form-control" id="birthdate" name="birthdate"/>
+                                    <input type="date" className="form-control" id="birthdate" name="birthdate" minLength={21} />
                                 </div>
                                 <fieldset className="col-12">
                                     <legend>Are you married?</legend>
@@ -114,8 +114,8 @@ const HiringForm = (args) => {
                                 </fieldset>
                                 <div className="col-12">
                                     <textarea name="more_info" id="more_info" className="form-control" cols="30"
-                                              rows="4" placeholder="Comments"></textarea>
-                                    <p>Characters remaining: <span id="charCount">30</span></p>
+                                              rows="4" maxLength={30} placeholder="Comments"></textarea>
+                                    {/*<p>Characters remaining: <span id="charCount">30</span></p>*/}
                                 </div>
                                 <div className="col-12">
                                     <button type="submit" id="form_submit" className="btn btn-primary">Submit</button>
