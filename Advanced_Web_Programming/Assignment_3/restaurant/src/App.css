@@ -1,0 +1,177 @@
+/*
+Color Palette: Cream and Black is the general theme.
+Cream text on black background for headers and sections, inverse on p tags and body
+This should give the site a contemporary/modern aesthetic. Clean and readable.
+Also, I like the simple Cream on Black color palette
+Perks of being color blind: Everything looks good to me.
+*/
+
+h1, nav , div {
+    text-align: center;
+}
+
+img {
+    margin: 12px 12px 12px 12px;
+    position: relative;
+}
+
+
+h1 {
+    margin: auto;
+    font-size: xxx-large !important;
+    font-weight: bold !important;
+    background-color: black;
+    color: var(--text-color) !important;
+    height: 100px;
+}
+
+p {
+    text-align: center;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    width: 80%;
+    margin: auto;
+    border: 2px solid var(--background-cream);
+}
+
+body {
+    background-image: url("assets/artistic_pickles_background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover ;
+}
+
+
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: xx-large;
+}
+
+.form-head-foot {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: xx-large;
+    background-color: var(--background-cream);
+}
+.form-body {
+    background-color: var(--primary-black);
+    color: var(--text-color);
+}
+
+:root {
+    --primary-black: #000000 !important;
+    --secondary-black: #141414 !important;
+    --background-cream: #F5EAB6 !important;
+    --text-color: #FFFDD3 !important;
+}
+
+.navbar-brand_img {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    border: 5px solid var(--background-cream);
+
+}
+
+.center {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+}
+
+.border-cream {
+    border: 5px solid var(--background-cream);
+}
+
+.Carousel {
+    height: max(500px);
+}
+
+.background-dull-highlight {
+    text-align: center;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    width: 80%;
+    margin: auto;
+    border: 2px solid var(--background-cream);
+}
+
+.Founder-Image {
+    width: 100%;
+    margin: 50px 0 0 0;
+    border: var(--background-cream) solid 3px;
+    border-radius: 50%;
+}
+
+.Carousel-card-text {
+    text-align: center;
+    font-weight: bold;
+    border-radius: 15px;
+    width: 80%;
+    margin: auto;
+}
+
+.Carousel-fit {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.Menu-Image {
+    width: 100%;
+    height: 100%;
+    margin: 0 !important;
+    position: relative;
+    border-width: 5px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, black, var(--background-cream)) 1 ;
+}
+
+.Menu-Item {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+
+/* Testing Classes to visualize the borders */
+
+.Frame-Visualizer-Blue {
+    border: solid blue 5px;
+}
+.Frame-Visualizer-Black {
+    border: solid black 5px;
+}
+.Frame-Visualizer-Red {
+    border: solid red 5px;
+}
+
+.primary {
+    background-color: #8484ff;
+}
+.secondary {
+    background-color: #f1f1f1;
+}
+
+.Navbar-Background_Light {
+    background-color: rgba(241, 241, 241, 0.8);
+}
+
+
+.Navbar-Options {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: xx-large !important;
+}

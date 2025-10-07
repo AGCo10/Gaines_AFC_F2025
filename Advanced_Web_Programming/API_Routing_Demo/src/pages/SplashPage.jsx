@@ -1,7 +1,7 @@
 const SplashPage = () => {
     return (
         <>
-            <h1>I am the Error Page</h1>
+            <h1>I am the Splash Page</h1>
         </>
     )
 }
