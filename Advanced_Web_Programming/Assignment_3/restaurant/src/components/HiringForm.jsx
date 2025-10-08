@@ -45,7 +45,6 @@ const HiringForm = (args) => {
         password: yup.string()
             .min(8, "Password must be at least 8 characters")
             .max(12, "Password may be at most 12 characters")
-
             .required("You must enter a password"),
         colors: yup.array().of(yup.string()),
         moreInfo: yup.string()
@@ -57,7 +56,6 @@ const HiringForm = (args) => {
         register,
         handleSubmit,
         formState: { errors },
-        watch,
     } = useForm({
         resolver: yupResolver(DataSchema),
     });
@@ -169,7 +167,6 @@ const HiringForm = (args) => {
                                 <li>one number</li>
                             </ul>
                         </div>
-
                         <fieldset>
                             <legend>Please Select Your Favorite Colors</legend>
                             {["Blue", "Green", "Orange", "Purple", "Red"].map(color => (
@@ -182,13 +179,14 @@ const HiringForm = (args) => {
                         <div className="col-12">
                             <textarea {...register("moreInfo")} id="more_info" className="form-control" cols="30" rows="4" placeholder="Comments"></textarea>
                         </div>
+
                         <div className="col-12">
                             <button type="submit" id="form_submit" className="btn btn-primary">Submit</button>
-                            <button type="button" className="btn btn-secondary" onClick={() => reset()}>Reset</button>
+                            <button type="reset" className="btn btn-secondary">Reset</button>
                         </div>
                     </form>
                 </ModalBody>
-                <ModalFooter className={"form-head-foot"}>
+                <ModalFooter style={{backgroundColor: "var(--background-cream)"}} className={"form-head-foot"}>
                     <Button color="secondary" onClick={toggle}>
                         Cancel
                     </Button>
