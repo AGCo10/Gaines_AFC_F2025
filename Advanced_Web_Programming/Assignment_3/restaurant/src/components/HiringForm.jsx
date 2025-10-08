@@ -45,6 +45,7 @@ const HiringForm = (args) => {
         password: yup.string()
             .min(8, "Password must be at least 8 characters")
             .max(12, "Password may be at most 12 characters")
+            .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?:{}|<>])[A-Za-z\d!@#$%^&*(),.?:{}|<>]{8,12}$/)
             .required("You must enter a password"),
         colors: yup.array().of(yup.string()),
         moreInfo: yup.string()
@@ -56,6 +57,7 @@ const HiringForm = (args) => {
         register,
         handleSubmit,
         formState: { errors },
+        setValue,
     } = useForm({
         resolver: yupResolver(DataSchema),
     });
@@ -75,12 +77,18 @@ const HiringForm = (args) => {
             city: data.city + " " + data.zip,
             married: data.married,
             colors: data.colors,
+            password: data.password,
             moreInfo: data.moreInfo,
         };
         console.log("Submitted payload:", payload);
-        reset(); // Reset form after submission
+        // reset(); // Reset form after submission
         toggle(); // Close modal
     };
+
+    const handleChange = (event) => {
+        console.log(`${event.target.name}: ${event.target.value}`) ;
+        setValue(event.target.name, event.target.value) ;
+    }
 
     return (
         <>
@@ -95,35 +103,35 @@ const HiringForm = (args) => {
                     <form onSubmit={handleSubmit(onSubmit)} id="form_application" className="row g-3 form-body">
                         <div className="col-md-6">
                             <label htmlFor="first_name" className="form-label">First Name</label>
-                            <input type="text" className="form-control" id="first_name" {...register("first_name")} placeholder="First Name"/>
+                            <input type="text" className="form-control" id="first_name" {...register("first_name")} placeholder="First Name" onChange={handleChange} />
                             {errors.first_name && <span className="text-danger">{errors.first_name.message}</span>}
                         </div>
                         <div className="col-md-6">
                             <label htmlFor="last_name" className="form-label">Last Name</label>
-                            <input type="text" className="form-control" id="last_name" {...register("last_name")} placeholder="Last Name (optional)"/>
+                            <input type="text" className="form-control" id="last_name" {...register("last_name")} placeholder="Last Name (optional)" onChange={handleChange}/>
                         </div>
                         <div className="col-md-6">
                             <label htmlFor="email" className="form-label">Email</label>
-                            <input type="email" className="form-control" id="email" {...register("email")} placeholder="Email"/>
+                            <input type="email" className="form-control" id="email" {...register("email")} placeholder="Email" onChange={handleChange}/>
                             {errors.email && <span className="text-danger">{errors.email.message}</span>}
                         </div>
                         <div className="col-md-6">
                             <label htmlFor="phone_number" className="form-label">Phone Number</label>
-                            <input type="tel" className="form-control" id="phone_number" {...register("phone_number")} placeholder="111-222-3333"/>
+                            <input type="tel" className="form-control" id="phone_number" {...register("phone_number")} placeholder="111-222-3333" onChange={handleChange}/>
                             {errors.phone_number && <span className="text-danger">{errors.phone_number.message}</span>}
                         </div>
                         <div className="col-12">
                             <label htmlFor="address_1" className="form-label">Street Address</label>
-                            <input type="text" className="form-control" id="address_1" {...register("address_1")} placeholder="Address 1"/>
+                            <input type="text" className="form-control" id="address_1" {...register("address_1")} placeholder="Address 1" onChange={handleChange}/>
                             {errors.address_1 && <span className="text-danger">{errors.address_1.message}</span>}
                         </div>
                         <div className="col-12">
                             <label htmlFor="address_2" className="form-label">Street Address 2</label>
-                            <input type="text" className="form-control" id="address_2" {...register("address_2")} placeholder="Address 2 (optional)"/>
+                            <input type="text" className="form-control" id="address_2" {...register("address_2")} placeholder="Address 2 (optional)" onChange={handleChange}/>
                         </div>
                         <div className="col-md-6">
                             <label htmlFor="city" className="form-label">City</label>
-                            <input type="text" className="form-control" id="city" {...register("city")} placeholder="City"/>
+                            <input type="text" className="form-control" id="city" {...register("city")} placeholder="City" onChange={handleChange}/>
                             {errors.city && <span className="text-danger">{errors.city.message}</span>}
                         </div>
                         <div className="col-md-4">
@@ -138,7 +146,7 @@ const HiringForm = (args) => {
                         </div>
                         <div className="col-md-2">
                             <label htmlFor="zip" className="form-label">Zip</label>
-                            <input type="text" className="form-control" id="zip" {...register("zip")} placeholder="Zip"/>
+                            <input type="text" className="form-control" id="zip" {...register("zip")} placeholder="Zip" onChange={handleChange}/>
                             {errors.zip && <span className="text-danger">{errors.zip.message}</span>}
                         </div>
                         <div className="col-6">
@@ -177,7 +185,7 @@ const HiringForm = (args) => {
                             ))}
                         </fieldset>
                         <div className="col-12">
-                            <textarea {...register("moreInfo")} id="more_info" className="form-control" cols="30" rows="4" placeholder="Comments"></textarea>
+                            <textarea {...register("moreInfo")} id="more_info" className="form-control" cols="30" rows="4" placeholder="Comments" onChange={handleChange}></textarea>
                         </div>
 
                         <div className="col-12">
