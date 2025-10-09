@@ -26,23 +26,15 @@ const HiringForm = (args) => {
             .max(30, "Address cannot be more than 30 characters.")
             .required("Address is required"),
         address_2: yup.string()
-            .when("address", (val, schema) => {
-            if(val?.length > 0) {  //if address exist then apply min max else not
-                return yup.string()
-                    .min(1, "min 5")
-                    .max(30, "max 255")
-            } else {
-                return yup.string()
-                    .notRequired();
-            }
-        }),
+            .min(0, "Address 2 is Optional.")
+            .max(30, "Address 2 cannot be longer that 30 characters."),
         city: yup.string()
             .min(1, "City must be at least 1 character.")
             .max(29, "City cannot be more than 29 characters.")
             .required("City is required"),
         state: yup.string()
             .required("State is required")
-            .oneOf(["texas", "missouri", "illinois"], "Invalid state."),
+            .oneOf(["TX", "MO", "IL"], "Invalid state."),
         zip: yup.string()
             .required("Zip code is required"),
         age: yup.number()
@@ -72,6 +64,21 @@ const HiringForm = (args) => {
         setValue,
     } = useForm({
         resolver: yupResolver(DataSchema),
+        defaultValues: {
+            first_name: '',
+            last_name: '',
+            user_email: '',
+            phone_number: '',
+            address_1: '',
+            address_2: '',
+            city: '',
+            state: '',
+            zip: '',
+            age: '25',
+            married: 'no',
+            colors: '',
+            password: '',
+        }
     });
 
     const [modal, setModal] = useState(false);
@@ -87,6 +94,7 @@ const HiringForm = (args) => {
             address_1: data.address_1,
             address_2: data.address_2,
             city: data.city + " " + data.zip,
+            longAddress: data.address_1 + " " + data.city + ", " + data.state  + " " +  data.zip,
             married: data.married,
             colors: data.colors,
             password: data.password,
@@ -151,9 +159,9 @@ const HiringForm = (args) => {
                             <label htmlFor="state" className="form-label">State</label>
                             <select id="state" className="form-select" {...register("state")}>
                                 <option value="" disabled>Choose...</option>
-                                <option value="texas">TX</option>
-                                <option value="illinois">IL</option>
-                                <option value="missouri">MO</option>
+                                <option value="TX">TX</option>
+                                <option value="IL">IL</option>
+                                <option value="MO">MO</option>
                             </select>
                             {errors.state && <span className="text-danger">{errors.state.message}</span>}
                         </div>
@@ -164,7 +172,7 @@ const HiringForm = (args) => {
                         </div>
                         <div className="col-6">
                             <label htmlFor="age" className="form-label">Age</label>
-                            <input type="number" className="form-control" id="age" {...register("age")} placeholder="Age"/>
+                            <input type="number" className="form-control" id="age" {...register("age")} placeholder="Age" onChange={handleChange}/>
                             {errors.age && <span className="text-danger">{errors.age.message}</span>}
                         </div>
                         <fieldset className="col-12">
@@ -176,7 +184,7 @@ const HiringForm = (args) => {
                                 <label htmlFor="married_no">NO</label>
                             </div>
                         </fieldset>
-                        <div className="col-12">
+                        <div className="col-lg-12">
                             <label htmlFor="password" className="form-label">Password</label>
                             <input type="password" {...register("password")} id="password" placeholder="Please Enter a Password"/>
                             {errors.password && <span className="text-danger">{errors.password.message}</span>}
@@ -188,10 +196,10 @@ const HiringForm = (args) => {
                                 <li>one number</li>
                             </ul>
                         </div>
-                        <fieldset>
+                        <fieldset className={"row"}>
                             <legend>Please Select Your Favorite Colors</legend>
                             {["Blue", "Green", "Orange", "Purple", "Red"].map(color => (
-                                <div key={color}>
+                                <div className={"col-lg-4 col-md-4"} key={color}>
                                     <input type="checkbox" id={color.toLowerCase()} {...register("colors")} value={color}/>
                                     <label htmlFor={color.toLowerCase()}>{color}</label>
                                 </div>
@@ -199,6 +207,8 @@ const HiringForm = (args) => {
                         </fieldset>
                         <div className="col-12">
                             <textarea {...register("moreInfo")} id="more_info" className="form-control" cols="30" rows="4" placeholder="Comments" onChange={handleChange}></textarea>
+                            {errors.moreInfo && <span className="text-danger">{errors.moreInfo.message}</span>}
+
                         </div>
 
                         <div className="col-12">
