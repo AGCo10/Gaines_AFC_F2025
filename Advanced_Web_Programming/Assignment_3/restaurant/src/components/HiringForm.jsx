@@ -9,11 +9,14 @@ const HiringForm = (args) => {
         first_name: yup.string()
             .min(1, "Name must be at least 1 character")
             .max(20, "Name cannot be more than 20 characters")
-            .required("First name is required"),
+            .required("First name is required."),
         last_name: yup.string()
+            .required("Last name is required.")
+            .default("")
             .min(1, "Name must be at least 1 character")
             .max(20, "Name cannot be more than 20 characters"),
         email: yup.string()
+            .default("")
             .email("Must be a valid email"),
         phone_number: yup.string()
             .required("Phone is required")
@@ -23,8 +26,16 @@ const HiringForm = (args) => {
             .max(30, "Address cannot be more than 30 characters.")
             .required("Address is required"),
         address_2: yup.string()
-            .min(1, "Address must be at least 1 character.")
-            .max(30, "Address cannot be more than 30 characters."),
+            .when("address", (val, schema) => {
+            if(val?.length > 0) {  //if address exist then apply min max else not
+                return yup.string()
+                    .min(1, "min 5")
+                    .max(30, "max 255")
+            } else {
+                return yup.string()
+                    .notRequired();
+            }
+        }),
         city: yup.string()
             .min(1, "City must be at least 1 character.")
             .max(29, "City cannot be more than 29 characters.")
@@ -38,7 +49,7 @@ const HiringForm = (args) => {
             .integer("Age must be a whole number")
             .default(25)
             .min(25, "Age must be at least 25")
-            .max(99, "Age must be at most 99")
+            .max(89, "Age may be at most 89. We ain't got time for Skeletons or vampires.")
             .required("Age is required"),
         married: yup.string()
             .required("Must be yes or no."),
@@ -55,6 +66,7 @@ const HiringForm = (args) => {
 
     const {
         register,
+        reset,
         handleSubmit,
         formState: { errors },
         setValue,
@@ -80,8 +92,9 @@ const HiringForm = (args) => {
             password: data.password,
             moreInfo: data.moreInfo,
         };
+
         console.log("Submitted payload:", payload);
-        // reset(); // Reset form after submission
+        reset(); // Reset form after submission
         toggle(); // Close modal
     };
 
@@ -108,7 +121,7 @@ const HiringForm = (args) => {
                         </div>
                         <div className="col-md-6">
                             <label htmlFor="last_name" className="form-label">Last Name</label>
-                            <input type="text" className="form-control" id="last_name" {...register("last_name")} placeholder="Last Name (optional)" onChange={handleChange}/>
+                            <input type="text" className="form-control" id="last_name" {...register("last_name")} placeholder="Last Name" onChange={handleChange}/>
                         </div>
                         <div className="col-md-6">
                             <label htmlFor="email" className="form-label">Email</label>

@@ -8,7 +8,7 @@ const HiringPage = () => {
             <div className="row">
                 <div className="col-lg-2 col-sm-2" style={{height: "90px"}}></div>
                 <div className="col-lg-8 col-sm-8" style={{height: "90px"}}>
-                    <h2 className="bebas-neue-regular">Are Your Pickles... BORING?</h2></div>
+                    <h2 className="bebas-neue-regular background-dull-highlight">Are Your Pickles... BORING?</h2></div>
                 <div className="col-lg-2 col-sm-2" style={{height: "90px"}}></div>
             </div>
             <div className="row">
