@@ -37,7 +37,7 @@ const HiringForm = (args) => {
                         Click Me
                     </Button>
                     <Modal isOpen={modal} toggle={toggle} {...args}>
-                        <ModalHeader toggle={toggle}>
+                        <ModalHeader  toggle={toggle}>
                             Pickler Application
                         </ModalHeader>
                         <ModalBody>

@@ -52,7 +52,7 @@ body {
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: xx-large;
+    font-size: xxx-large;
     background-color: var(--background-cream);
 }
 .form-body {
@@ -151,4 +151,9 @@ body {
 }
 .secondary {
     background-color: #f1f1f1;
+}
+
+
+.modal-footer {
+    border-top: black;
 }
