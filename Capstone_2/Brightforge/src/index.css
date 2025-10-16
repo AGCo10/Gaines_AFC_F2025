@@ -1,0 +1,27 @@
+:root {
+    --primary-color: #1A237E; /* Deep Indigo for a more vibrant feel */
+    --secondary-color: #FF5252; /* Vivid Coral Red for a dynamic accent */
+    --accent-color: #FFEB3B; /* Bright Yellow for high visibility */
+    --background-color: #263238; /* Charcoal Gray for a darker background */
+    --text-color: #FFFFFF; /* Pure White for contrast */
+    --shadow:0 0 24px rgba(201,162,39,0.35); /* "Golden Glow" → soft drop shadows under cards, modals, or navbars */
+    --border-color: #B0BEC5; /* Soft Light Gray for borders */
+}
+
+header, nav, .btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+a, .highlight {
+    color: var(--accent-color);
+}
+
+body, footer {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+p, h1, h2, h3 {
+    color: var(--text-color);
+}
