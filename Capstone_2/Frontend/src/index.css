@@ -25,3 +25,22 @@ body, footer {
 p, h1, h2, h3 {
     color: var(--text-color);
 }
+
+.Frame-Visualizer-Blue {
+    border: solid blue 5px;
+}
+.Frame-Visualizer-Black {
+    border: solid black 5px;
+}
+.Frame-Visualizer-Red {
+    border: solid red 5px;
+}
+
+.Brand-Image {
+    width: 100px !important;
+    height: 100px !important;
+    position: relative;
+    border-width: 5px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, black, darkred) 1 ;
+}
