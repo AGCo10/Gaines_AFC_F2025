@@ -3,16 +3,30 @@ import HammerAndAnvil from "../assets/HammerAndAnvil.gif"
 
 
 export const MyNavbar = ()=> {
+    const myNavs = [
+        {
+            link: 'splash',
+            displayName: 'Home'
+        },{
+            link: 'inventory',
+            displayName: 'Inventory'
+        }
+    ];
+
+    const myNavLinks = myNavs.map((element,index) => {
+        return(
+            <Nav.Link key = {index} href={element.link}>{element.displayName}</Nav.Link>
+        )
+    })
+
     return (
         <Navbar expand="lg" className="bg-body-tertiary col-lg-12">
-            <Container fluid className="Frame-Visualizer-Black">
+            <Container fluid>
                 <Navbar.Brand><img src={HammerAndAnvil} className={"Brand-Image"} alt="Hammer and Anvil"/></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
-                        <Nav.Link href="#action1">Home</Nav.Link>
-                        <Nav.Link href="#action2">Inventory</Nav.Link>
-                        <Nav.Link href="#" disabled>About Us</Nav.Link>
+                        {myNavLinks}
                     </Nav>
                     <Form className="d-flex">
                         <Form.Control

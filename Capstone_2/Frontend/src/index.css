@@ -1,6 +1,6 @@
 :root {
     --primary-color: #1A237E; /* Deep Indigo for a more vibrant feel */
-    --secondary-color: #FF5252; /* Vivid Coral Red for a dynamic accent */
+    --secondary-color: #d80b0b; /* Vivid Coral Red for a dynamic accent */
     --accent-color: #FFEB3B; /* Bright Yellow for high visibility */
     --background-color: #263238; /* Charcoal Gray for a darker background */
     --text-color: #FFFFFF; /* Pure White for contrast */
@@ -27,13 +27,13 @@ p, h1, h2, h3 {
 }
 
 .Frame-Visualizer-Blue {
-    border: solid blue 5px;
+    border: solid blue 2px;
 }
 .Frame-Visualizer-Black {
-    border: solid black 5px;
+    border: solid black 2px;
 }
 .Frame-Visualizer-Red {
-    border: solid red 5px;
+    border: solid red 2px;
 }
 
 .Brand-Image {
@@ -43,4 +43,36 @@ p, h1, h2, h3 {
     border-width: 5px;
     border-style: solid;
     border-image: linear-gradient(to bottom, black, darkred) 1 ;
+}
+
+
+.Forge-Button {
+    position: relative;
+    padding: 12px 24px;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.4s ease;
+    box-shadow: 0 0 5px var(--accent-color), 0 0 10px var(--accent-color);
+    animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+    0% { box-shadow: 0 0 5px var(--accent-color), 0 0 10px var(--accent-color); }
+    50% { box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color); }
+    100% { box-shadow: 0 0 5px var(--accent-color), 0 0 10px var(--accent-color); }
+}
+
+.Forge-Button:hover {
+    color: var(--background-color);
+}
+
+.Forge-Button:focus {
+    outline: none;
+    box-shadow: 0 0 24px var(--accent-color);
 }

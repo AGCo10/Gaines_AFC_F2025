@@ -1,14 +1,17 @@
 
 import './App.css'
 import {PageHeader} from "./components/PageHeader.tsx";
+import {Outlet} from "react-router-dom";
 
-function App() {
+export const App = () => {
 
   return (
     <>
         <PageHeader />
+        <div>
+            <Outlet />
+        </div>
     </>
   )
 }
 
-export default App
