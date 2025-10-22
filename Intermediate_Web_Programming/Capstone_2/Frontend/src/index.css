@@ -1,0 +1,108 @@
+:root {
+    --primary-color: #1A237E; /* Deep Indigo for a more vibrant feel */
+    --secondary-color: #d80b0b; /* Vivid Coral Red for a dynamic accent */
+    --accent-color: #FFEB3B; /* Bright Yellow for high visibility */
+    --background-color: #263238; /* Charcoal Gray for a darker background */
+    --text-color: #FFFFFF; /* Pure White for contrast */
+    --shadow:0 0 24px rgba(201,162,39,0.35); /* "Golden Glow" → soft drop shadows under cards, modals, or navbars */
+    --border-color: #B0BEC5; /* Soft Light Gray for borders */
+}
+
+header, nav, .btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+a, .highlight {
+    color: var(--accent-color);
+}
+
+body, footer {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+p, h1, h2, h3 {
+    color: var(--text-color);
+}
+
+.Frame-Visualizer-Blue {
+    border: solid blue 2px;
+}
+.Frame-Visualizer-Black {
+    border: solid black 2px;
+}
+.Frame-Visualizer-Red {
+    border: solid red 2px;
+}
+
+.Brand-Image {
+    width: 100px !important;
+    height: 100px !important;
+    position: relative;
+    border-width: 5px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, black, darkred) 1 ;
+}
+
+
+.Forge-Button {
+    position: relative;
+    padding: 12px 24px;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    border: 2px solid var(--border-color);
+    border-radius: 50px 120px 120px 50px; /* Adjust the value for more or less rounding */
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.4s ease;
+    box-shadow: 0 0 5px var(--accent-color), 0 0 10px var(--accent-color);
+    animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+    0% { box-shadow: 0 0 5px var(--accent-color), 0 0 10px var(--accent-color); }
+    50% { box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color); }
+    100% { box-shadow: 0 0 5px var(--accent-color), 0 0 10px var(--accent-color); }
+}
+
+.Forge-Button:hover {
+    color: var(--background-color);
+}
+
+.Forge-Button:focus {
+    outline: none;
+    box-shadow: 0 0 24px var(--accent-color);
+}
+
+.Brightforge-Logo {
+    border-radius: 50px 120px 120px 50px; /* Adjust the value for more or less rounding */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    overflow: hidden; /* Ensures any overflow is clipped */
+    max-width: 100%; /* Responsive width */
+    height: auto; /* Maintains aspect ratio */
+}
+
+.promotion-banner {
+    background-color: #1cedf6; /* Bright Yellow */
+    color: #1A237E; /* Deep Indigo */
+    position: fixed;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 16px;
+    animation: scroll 10s linear infinite;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+@keyframes scroll {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+.hidden {
+    display: none; /* Hide the banner when not active */
+}

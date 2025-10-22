@@ -1,4 +1,4 @@
-import {Table} from 'reactstrap'
+import {Table} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PiratePickleImage from '../assets/pirate_pickle.jpeg' ;
 import PrePickleImage from '../assets/pre-pickle.jpeg' ;

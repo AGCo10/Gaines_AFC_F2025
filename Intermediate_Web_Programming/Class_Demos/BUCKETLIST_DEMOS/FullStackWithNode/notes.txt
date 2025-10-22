@@ -1,0 +1,50 @@
+Can only use these two routes!!!
+/api/bucket
+/api/bucket/:id
+
+Must return everything as JSON.
+
+VERBS
+CRUD functional API
+Create data - POST verb
+Read data - GET verb
+Update data - PUT verb
+Delete data - DELETE verb
+
+RULES:
+1) WE determine endpoints
+2) WE determine HOW data will be sent back
+3) WE determine how MUCH data to send back
+4) WE determine the structure data
+
+READ
+1) endpoint - GET verb and /api/bucket
+2) send back data -> JSON
+3) send back everything -> array of objects
+4) object structure:
+    {
+        id: 1,
+        description: "Call mom!!!",
+        isComplete: false,
+    }
+
+CREATE
+1) endpoint - POST and /api/bucket
+2) send back data -> JSON
+3) send back success = status code BUT = one thing
+4) send back ONE object - SAVED form the database
+
+DELETE
+1) endpoint - DELETE verb and /api/bucket/:id
+2) send back JSON
+3) send back the all items minus the one removed
+4) send back one object - what was deleted.
+
+UPDATE
+1) endpoint - PUT verb and /api/bucket/:id
+1a) updating the CSS
+2) send back JSON
+3) send back ONE object that will have isComplete updated
+4) ???????
+
+
