@@ -1,11 +1,4 @@
-
-interface Widget {
-    imageURL: string;
-    name: string;
-    description: string;
-    price: number;
-    rating: number;
-}
+import type {Widget} from "./Widget.ts";
 
 export const widgetTable: Widget[] = [
     {
