@@ -1,5 +1,5 @@
 
-import './App.css'
+import '../src/App.css';
 import {PageHeader} from "./components/PageHeader.tsx";
 import {Outlet} from "react-router-dom";
 

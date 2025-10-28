@@ -6,9 +6,9 @@ services:
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
     environment:
-      POSTGRES_USER: dev
-      POSTGRES_PASSWORD: dev1
-      POSTGRES_DB: brightforge_repo
+      POSTGRES_USER: ch10dev
+      POSTGRES_PASSWORD: ch10dev!
+      POSTGRES_DB: brightforge
       POSTGRES_HOST_AUTH_METHOD: password
     ports:
       - "5434:5432" # 5432 is default POSTGRES port
