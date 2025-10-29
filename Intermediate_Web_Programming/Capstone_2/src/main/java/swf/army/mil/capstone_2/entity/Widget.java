@@ -10,4 +10,5 @@ public class Widget {
     private String description;
     private Double price;
     private Double rating;
+
 }
