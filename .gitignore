@@ -29,3 +29,4 @@ node_modules
 .DS_Store
 
 Notes_Criteria
+docker-compose.yaml
