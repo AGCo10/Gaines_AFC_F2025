@@ -1,12 +1,14 @@
 package swf.army.mil.capstone_2.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import swf.army.mil.capstone_2.entity.Widget;
 import swf.army.mil.capstone_2.service.WidgetService;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @RestController
@@ -42,17 +44,23 @@ public class WidgetController {
 
     // Update a widget by ID
     @PatchMapping("/{id}")
-    public ResponseEntity<Widget> updateWidgetById(@PathVariable Long id, @RequestBody Widget updatedCard) {
-        Optional<Widget> card = widgetService.updateWidgetById(id, updatedCard);
-        return card.map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.notFound().build());
+    public ResponseEntity<Widget> updateWidget(@RequestBody Widget updatedWidget) {
+        try {
+            widgetService.updateWidget(updatedWidget);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (NoSuchElementException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
-    // Delete a widget by ID
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity<Void> deleteCard(@PathVariable Long id) {
-//        widgetService.deleteWidget(id);
-//        return ResponseEntity.notFound().build();
-//    }
-
+    //Delete a widget by ID
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteWidget(@PathVariable Long id) {
+        try {
+            widgetService.deleteWidgetById(id);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (NoSuchElementException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 }

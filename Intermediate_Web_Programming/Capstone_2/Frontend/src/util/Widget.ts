@@ -1,7 +1,8 @@
 export type Widget = {
-    imageURL: string;
+    id?: number,
+    imageURL?: string;
     name: string;
-    description: string;
-    price: number;
-    rating: number;
+    description?: string;
+    price?: number;
+    rating?: number;
 }

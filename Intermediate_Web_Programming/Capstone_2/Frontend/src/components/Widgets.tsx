@@ -1,8 +1,18 @@
-import {widgetTable} from "../util/widgetTable.ts";
+import {getWidgets} from "../util/WidgetClient.ts";
+import {useEffect, useState} from "react";
+import type {Widget} from "../util/Widget.ts";
 
 export const Widgets= () => {
 
-    const widgetsTabled = widgetTable.map((element, index) => {
+    const [widgets, setWidgets] = useState<Widget[]>([]);
+
+    useEffect(() => {
+        (async () => {
+            setWidgets(await getWidgets());
+        })();
+    }, [])
+
+    const widgetsTabled = widgets.map((element, index) => {
         return(
             <div className="w-full rounded overflow-hidden shadow-lg" id={'widget'} key = {index}>
                 <img src={element.imageURL} alt={element.name + " image"} />

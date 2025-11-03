@@ -5,6 +5,7 @@ import swf.army.mil.capstone_2.entity.Widget;
 import swf.army.mil.capstone_2.repository.WidgetRepository;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Service
@@ -27,15 +28,22 @@ public class WidgetService {
         return widgetRepository.findById(id);
     }
 
-    public Optional<Widget> updateWidgetById(Long id, Widget updatedWidget) {
-        return widgetRepository.findById(id).map(existingWidget -> {
-            if (updatedWidget.getName() != null) {
-                existingWidget.setName(updatedWidget.getName());
-            }
-            return widgetRepository.save(existingWidget);
-        });
+    public void updateWidget(Widget updatedWidget) throws NoSuchElementException {
+        widgetRepository.findById(updatedWidget.getId()).orElseThrow();
+        updatedWidget.setDescription(updatedWidget.getDescription());
+        updatedWidget.setPrice(updatedWidget.getPrice());
+        updatedWidget.setName(updatedWidget.getName());
+        updatedWidget.setImageURL(updatedWidget.getImageURL());
+        updatedWidget.setRating(updatedWidget.getRating());
+        widgetRepository.save(updatedWidget);
     }
 
-//    public void deleteWidget(Long id) {
-//    }
+    public Optional<Widget> deleteWidgetById(Long l) throws NoSuchElementException {
+        Optional<Widget> foundWidget = getWidgetById(l);
+        if (foundWidget != null) {
+            widgetRepository.deleteById(l);
+            return foundWidget;
+        }
+        return null;
+    }
 }

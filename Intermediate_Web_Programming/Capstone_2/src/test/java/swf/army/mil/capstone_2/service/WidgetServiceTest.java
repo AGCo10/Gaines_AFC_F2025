@@ -1,91 +1,96 @@
 package swf.army.mil.capstone_2.service;
+
+
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import swf.army.mil.capstone_2.entity.Widget;
 import swf.army.mil.capstone_2.repository.WidgetRepository;
 
+import java.util.List;
 import java.util.Optional;
 
-@WebMvcTest
-public class WidgetServiceTest {
+import static org.mockito.Mockito.*;
 
-        const WidgetRepository mockWidgetRepository;
-        const WidgetService widgetService;
+@ExtendWith(MockitoExtension.class)
+class WidgetServiceTest {
 
-        describe('Get All Widgets', () => {
+    @Mock
+    WidgetRepository mockWidgetRepository;
 
-    })
+    @InjectMocks
+    WidgetService widgetService;
 
-        describe('saveWidget', () => {
-                it('should save and return the widget', () => {
-            const widget = new Widget(1, 'New Widget');
-        widgetRepository.save.mockReturnValue(widget);
+    @Test
+    void getAllWidgets_shouldCallRepository() {
+        widgetService.getAllWidgets();
+        verify(mockWidgetRepository, times(1)).findAll();
+    }
 
-            const result = widgetService.saveWidget(widget);
-        expect(result).toEqual(widget);
-        expect(widgetRepository.save).toHaveBeenCalledWith(widget);
-        });
-    });
+    @Test
+    void getAllWidgets_shouldReturnAllWidget() {
+        List<Widget> testWidgets = List.of(
+                new Widget(1L, "banana", "more banana", "Even more bananas", 2.50, 4.0)
+        );
+        when(widgetService.getAllWidgets()).thenReturn(testWidgets);
+        List<Widget> validator = widgetService.getAllWidgets();
+        assert(validator.equals(testWidgets));
+        verify(mockWidgetRepository, times(1)).findAll();
 
-        describe('getWidgetById', () => {
-                it('should return the widget if found', () => {
-            const widget = new Widget(1, 'Widget1');
-        widgetRepository.findById.mockReturnValue(Optional.of(widget));
+    }
 
-            const result = widgetService.getWidgetById(1);
-        expect(result).toEqual(Optional.of(widget));
-        expect(widgetRepository.findById).toHaveBeenCalledWith(1);
-        });
+    @Test
+    void getWidgetById_shouldCallRepository() {
+        widgetService.getWidgetById(1L);
+        verify(mockWidgetRepository, times(1)).findById(1L);
+    }
 
-        it('should return an empty optional if not found', () => {
-                widgetRepository.findById.mockReturnValue(Optional.empty());
+    @Test
+    void getWidgetById_shouldReturnWidget() {
+        Optional<Widget> testWidget = Optional.of(new Widget(1L, "banana", "more banana", "Even more bananas", 2.50, 4.0));
+        when(widgetService.getWidgetById(1L)).thenReturn(testWidget);
+        Optional<Widget> testValidator = widgetService.getWidgetById(1L);
+        assert(testValidator.equals(testWidget));
+        verify(mockWidgetRepository, times(1)).findById(1L);
+    }
 
-            const result = widgetService.getWidgetById(999);
-        expect(result).toEqual(Optional.empty());
-        expect(widgetRepository.findById).toHaveBeenCalledWith(999);
-        });
-    });
+    @Test
+    void saveWidget_shouldCallRepository() {
+        Widget testWidget = new Widget(1L, "banana", "more banana", "Even more bananas", 2.50, 4.0);
+        widgetService.saveWidget(testWidget);
+        verify(mockWidgetRepository, times(1)).save(testWidget);
+    }
 
-        describe('updateWidgetById', () => {
-                it('should update the widget if found', () => {
-            const existingWidget = new Widget(1, 'Old Widget');
-            const updatedWidget = new Widget(null, 'Updated Widget');
-        widgetRepository.findById.mockReturnValue(Optional.of(existingWidget));
-        widgetRepository.save.mockReturnValue(existingWidget);
+    @Test
+    void saveWidget_shouldReturnSavedWidget() {
+        Widget testWidget = new Widget(1L, "banana", "more banana", "Even more bananas", 2.50, 4.0);
+        when(mockWidgetRepository.save(testWidget)).thenReturn(testWidget);
+        Widget testValidator = widgetService.saveWidget(testWidget);
+        assert(testValidator.equals(testWidget));
+        verify(mockWidgetRepository, times(1)).save(testWidget);
+    }
 
-            const result = widgetService.updateWidgetById(1, updatedWidget);
-        expect(result).toEqual(Optional.of(existingWidget));
-        expect(existingWidget.getName()).toBe('Updated Widget');
-        expect(widgetRepository.save).toHaveBeenCalledWith(existingWidget);
-        });
 
-        it('should return an empty optional if the widget is not found', () => {
-            const updatedWidget = new Widget(null, 'Updated Widget');
-        widgetRepository.findById.mockReturnValue(Optional.empty());
+    @Test
+    void updateWidget_shouldUpdateAndReturnWidget() {
+        Widget testWidget = new Widget(1L, "banana", "more banana", "Even more bananas", 2.50, 4.0);
+        Widget updatedWidget = new Widget(1L, "Orange", "Not banana", "Never Is a Banana", 3.50, 4.0);
+        when(mockWidgetRepository.findById(testWidget.getId())).thenReturn(Optional.of(testWidget));
+        widgetService.updateWidget(updatedWidget);
+        verify(mockWidgetRepository, times(1)).save(updatedWidget);
+    }
 
-            const result = widgetService.updateWidgetById(999, updatedWidget);
-        expect(result).toEqual(Optional.empty());
-        expect(widgetRepository.findById).toHaveBeenCalledWith(999);
-        });
-    });
+    @Test
+    void deleteWidget_shouldCallRepository() {
+        Widget testWidget = new Widget(1L, "banana", "more banana", "Even more bananas", 2.50, 4.0);
+        when(mockWidgetRepository.findById(1L)).thenReturn(Optional.of(testWidget));
 
-        // Uncomment and implement this test when the deleteWidget method is available
-    /*
-    describe('deleteWidget', () => {
-        it('should delete the widget if found', () => {
-            const id = 1;
-            widgetRepository.findById.mockReturnValue(Optional.of(new Widget(id, 'Widget1')));
-            widgetService.deleteWidget(id);
-            expect(widgetRepository.findById).toHaveBeenCalledWith(id);
-            // Add verification for delete action once implemented
-        });
+        widgetService.deleteWidgetById(1L);
 
-        it('should not throw an error if the widget is not found', () => {
-            const id = 999;
-            widgetRepository.findById.mockReturnValue(Optional.empty());
-            expect(() => widgetService.deleteWidget(id)).not.toThrow();
-        });
-    });
-    */
-    });
+        verify(mockWidgetRepository, times(1)).deleteById(testWidget.getId());
+        verify(mockWidgetRepository, times(1)).findById(1L);
+    }
+
 }
