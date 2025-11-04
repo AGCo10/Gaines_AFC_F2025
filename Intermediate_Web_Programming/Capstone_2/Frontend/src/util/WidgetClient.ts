@@ -3,6 +3,7 @@ import type {Widget} from "./Widget.ts";
 
 export const getWidgets = async () : Promise<Widget[]> => {
     const result = await axios.get('/api/widget');
+    console.log(result.data);
     return result.data;
 }
 

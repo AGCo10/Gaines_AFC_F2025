@@ -1,4 +1,5 @@
 import { Widgets} from "../components/Widgets.tsx";
+import {CreateWidgetModal} from "../components/CreateWidgetModal.tsx";
 
 
 export const WidgetPage = () => {
@@ -11,9 +12,9 @@ export const WidgetPage = () => {
 
     return (
         <>
-            <button>Add a Widget</button>
+            <CreateWidgetModal/>
             {/*The Widgets Component is the assortment of widgets pulled from the backend.
-            It is an entirely presentational component. */}
+            It is currently an entirely presentational component. */}
             <Widgets />
         </>
     )

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import swf.army.mil.capstone_2.dto.WidgetResponseDTO;
 import swf.army.mil.capstone_2.entity.Widget;
 import swf.army.mil.capstone_2.service.WidgetService;
 
@@ -21,30 +22,37 @@ public class WidgetController {
         this.widgetService = widgetService;
     }
 
+    private WidgetResponseDTO toDTO(Widget widget) {
+        return new WidgetResponseDTO(widget.getName(), widget.getDescription(), widget.getPrice(), widget.getRating());
+    }
+
     // Create or update a widget
     @PostMapping
-    public ResponseEntity<Widget> createOrUpdateWidget(@RequestBody Widget widget) {
+    public ResponseEntity<WidgetResponseDTO> createOrUpdateWidget(@RequestBody Widget widget) {
         Widget savedWidget = widgetService.saveWidget(widget);
-        return ResponseEntity.ok(savedWidget);
+        return ResponseEntity.ok(toDTO(savedWidget));
     }
 
     // Retrieve all widgets
     @GetMapping
-    public List<Widget> getAllWidgets() {
-        return widgetService.getAllWidgets();
+    public ResponseEntity<List<WidgetResponseDTO>> getAllWidgets() {
+        List<WidgetResponseDTO> responseList = widgetService.getAllWidgets().stream().map(this::toDTO).toList();
+        return ResponseEntity.ok(responseList);
     }
 
     // Retrieve a widget by ID
     @GetMapping("/{id}")
-    public ResponseEntity<Widget> getWidgetById(@PathVariable Long id) {
+    public ResponseEntity<WidgetResponseDTO> getWidgetById(@PathVariable Long id) {
         Optional<Widget> widget = widgetService.getWidgetById(id);
-        return widget.map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.notFound().build());
+        if (widget.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(toDTO(widget.get()));
     }
 
     // Update a widget by ID
     @PatchMapping("/{id}")
-    public ResponseEntity<Widget> updateWidget(@RequestBody Widget updatedWidget) {
+    public ResponseEntity<WidgetResponseDTO> updateWidget(@RequestBody Widget updatedWidget) {
         try {
             widgetService.updateWidget(updatedWidget);
             return new ResponseEntity<>(HttpStatus.OK);
