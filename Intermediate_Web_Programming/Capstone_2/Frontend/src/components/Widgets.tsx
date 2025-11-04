@@ -15,19 +15,25 @@ export const Widgets= () => {
 
     const widgetsTabled = widgets.map((element, index) => {
         return(
-            <div className="w-full rounded overflow-hidden shadow-lg" id={'widget'} key = {index}>
+            <div className="w-full rounded overflow-hidden shadow-lg" id={'widget'} key={index}>
                 <img src={wimsicalWidget} alt={element.name + " image"} />
                 <div className="px-6 py-4">
                     <div className="font-bold text-xl mb-2">{element.name}</div>
-                    <p className="text-gray-700 text-base"> {element.description} </p>
+                    <p className="text-gray-700 text-base">{element.description}</p>
                 </div>
 
-                <div className="px-6 pt-4 pb-2">
-                    <label htmlFor=""> Price <br/>
-                    <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">  {element.price}</span>
+                <div className="flex justify-between items-end px-6 py-4">
+                    <label htmlFor="price">
+                        Price <br />
+                        <span id={"price"} className="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
+                            {element.price}
+                        </span>
                     </label>
-                    <label htmlFor=""> Rating <br/>
-                    <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">  {element.rating}</span>
+                    <label htmlFor="">
+                        Rating <br />
+                        <span id={"rating"} className="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
+                            {element.rating}
+                        </span>
                     </label>
                 </div>
             </div>
@@ -35,7 +41,7 @@ export const Widgets= () => {
     });
 
     return (
-        <div className="grid grid-cols-4 gap-4">
+        <div role={'widgetTable'} className=" grid m-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {widgetsTabled}
         </div>
     )

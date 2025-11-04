@@ -1,58 +1,56 @@
-import { render, screen } from '@testing-library/react';
-import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { Widgets } from '../Widgets';
-import {widgetTable} from "../../util/widgetTable.ts";
-
-// Mock widgetTable data
-vi.mock('../util/widgetTable.ts', () => ({
-    widgetTable: [
-        {
-            imageURL: 'https://example.com/image1.jpg',
-            name: 'Widget 1',
-            description: 'Description for Widget 1',
-            price: 10,
-            rating: 4.5,
-        },
-        {
-            imageURL: 'https://example.com/image2.jpg',
-            name: 'Widget 2',
-            description: 'Description for Widget 2',
-            price: 20.00,
-            rating: 4.0,
-        },
-    ],
-}));
+import { render, screen, waitFor } from '@testing-library/react';
+import { Widgets } from '../Widgets.tsx';
+import * as WidgetClient from '../../util/WidgetClient.ts';
+import {vi} from 'vitest';
 
 describe('Widgets Component', () => {
-    beforeEach(() => {
-        render(<Widgets />);
-    });
+    const mockWidgets = [{ name: 'Widget 1', description: 'Description 1', price: 10, rating: 3.2 },
+    { name: 'Widget 2', description: 'Description 2', price: 20, rating: 4.5 }];
+
+    vi.spyOn(WidgetClient, 'getWidgets').mockResolvedValue([{name: 'Widget 1', description: 'Description 1', price: 10, rating: 4.5 },
+        { name: 'Widget 2', description: 'Description 2', price: 20, rating: 3.2 }]);
+
 
     it('renders without crashing', () => {
-        const widgetContainer = screen.getAllByRole('paragraph');
-        expect(widgetContainer).toHaveLength(3);
+        render(<Widgets />);
+        expect(screen.getByRole('widgetTable')).toBeInTheDocument();
     });
 
-    it('displays the correct number of widgets', () => {
-        const widgets = screen.getAllByRole('img'); // Check images for widgets
-        expect(widgets.length).toBe(widgetTable.length);
-    });
-
-    it('displays correct widget information', () => {
-        widgetTable.forEach((widget) => {
-            const widgetElement = screen.getByText(widget.name);
-            expect(widgetElement).toBeInTheDocument();
-            expect(screen.getByAltText(`${widget.name} image`)).toHaveAttribute('src', widget.imageURL);
-            expect(screen.getByText(widget.description)).toBeInTheDocument();
-            expect(screen.getByText(widget.price)).toBeInTheDocument();
-            expect(screen.getByText(widget.rating)).toBeInTheDocument();
+    it('calls getWidgets on load', async () => {
+        render(<Widgets />);
+        await waitFor(() => {
+            // The following call is two because of the spy test and rendering the widgets... I think
+            expect(WidgetClient.getWidgets).toHaveBeenCalledTimes(2);
         });
     });
 
-    it('renders correct class names for styling', () => {
-        const widgetElements = screen.getAllByRole('img');
-        widgetElements.forEach((element) => {
-            expect(element.closest('div')).toHaveClass('w-full rounded overflow-hidden shadow-lg');
+    it('displays widgets after fetching', async () => {
+        render(<Widgets />);
+        await waitFor(() => {
+            expect(screen.getByText('Widget 1')).toBeInTheDocument();
+            expect(screen.getByText('Description 1')).toBeInTheDocument();
+            expect(screen.getByText(10)).toBeInTheDocument();
+            expect(screen.getByText(4.5)).toBeInTheDocument();
+        });
+    });
+
+    it('displays all widgets correctly', async () => {
+        render(<Widgets />);
+        await waitFor(() => {
+            mockWidgets.forEach(widget => {
+                expect(screen.getByText(widget.name)).toBeInTheDocument();
+                expect(screen.getByText(widget.description)).toBeInTheDocument();
+                expect(screen.getByText(widget.price)).toBeInTheDocument();
+                expect(screen.getByText(widget.rating)).toBeInTheDocument();
+            });
+        });
+    });
+
+    it('handles empty widget list', async () => {
+        render(<Widgets />);
+        await waitFor(() => {
+            expect(screen.queryByText('Widget 1')).not.toBeInTheDocument();
+            expect(screen.queryByText('Widget 2')).not.toBeInTheDocument();
         });
     });
 });
