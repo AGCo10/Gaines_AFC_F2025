@@ -2,6 +2,10 @@ import {getWidgets} from "../util/WidgetClient.ts";
 import {useEffect, useState} from "react";
 import type {Widget} from "../util/Widget.ts";
 import wimsicalWidget from "../assets/Whimsical-Wobbler.jpeg";
+import {Button} from "react-bootstrap";
+import {FaStar} from "react-icons/fa";
+import {logDOM} from "@testing-library/dom";
+import {DeleteWidgetModal} from "./DeleteWidgetModal.tsx";
 
 export const Widgets= () => {
 
@@ -13,12 +17,13 @@ export const Widgets= () => {
         })();
     }, [])
 
+
     const widgetsTabled = widgets.map((element, index) => {
         return(
             <div className="w-full rounded overflow-hidden shadow-lg" id={'widget'} key={index}>
-                <img src={wimsicalWidget} alt={element.name + " image"} />
-                <div className="px-6 py-4">
-                    <div className="font-bold text-xl mb-2">{element.name}</div>
+                <img className={'px-2 rounded-4xl'} src={wimsicalWidget} alt={element.name + " image"} />
+                <div className="p-6 Frame-Visualizer-Blue">
+                    <h3 className="font-bold text-xl mb-2">{element.name}</h3>
                     <p className="text-gray-700 text-base">{element.description}</p>
                 </div>
 
@@ -35,6 +40,9 @@ export const Widgets= () => {
                             {element.rating}
                         </span>
                     </label>
+                </div>
+                <div className={'flex items-center justify-center p-2'}>
+                    <DeleteWidgetModal name={element.name}/>
                 </div>
             </div>
         )
