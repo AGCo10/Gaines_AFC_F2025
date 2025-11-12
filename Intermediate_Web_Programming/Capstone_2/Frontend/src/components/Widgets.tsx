@@ -2,12 +2,11 @@ import {getWidgets} from "../util/WidgetClient.ts";
 import {useEffect, useState} from "react";
 import type {Widget} from "../util/Widget.ts";
 import wimsicalWidget from "../assets/Whimsical-Wobbler.jpeg";
-import {Button} from "react-bootstrap";
-import {FaStar} from "react-icons/fa";
-import {logDOM} from "@testing-library/dom";
 import {DeleteWidgetModal} from "./DeleteWidgetModal.tsx";
+import {UpdateWidgetModal} from "./UpdateWidgetModal.tsx";
 
 export const Widgets= () => {
+
 
     const [widgets, setWidgets] = useState<Widget[]>([]);
 
@@ -20,9 +19,9 @@ export const Widgets= () => {
 
     const widgetsTabled = widgets.map((element, index) => {
         return(
-            <div className="w-full rounded overflow-hidden shadow-lg" id={'widget'} key={index}>
+            <div className="h-full w-full rounded overflow-hidden shadow-lg" id={'widget'} key={index}>
                 <img className={'px-2 rounded-4xl'} src={wimsicalWidget} alt={element.name + " image"} />
-                <div className="p-6 Frame-Visualizer-Blue">
+                <div className="p-6 ">
                     <h3 className="font-bold text-xl mb-2">{element.name}</h3>
                     <p className="text-gray-700 text-base">{element.description}</p>
                 </div>
@@ -41,10 +40,12 @@ export const Widgets= () => {
                         </span>
                     </label>
                 </div>
-                <div className={'flex items-center justify-center p-2'}>
-                    <DeleteWidgetModal name={element.name}/>
+                <div className={' flex gap-2 items-center justify-center p-2'}>
+                    <UpdateWidgetModal widget={element} />
+                    <DeleteWidgetModal widget={element} />
                 </div>
             </div>
+
         )
     });
 

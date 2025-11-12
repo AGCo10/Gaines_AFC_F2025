@@ -35,7 +35,7 @@ describe('Widget Client', () => {
             id: 1,
             name: "Test todo"
         }
-        await deleteWidget(testWidgetToDelete);
+        await deleteWidget(testWidgetToDelete.id);
         expect(axiosSpy).toHaveBeenCalledWith('/api/widget/' + testWidgetToDelete.id);
     })
 })

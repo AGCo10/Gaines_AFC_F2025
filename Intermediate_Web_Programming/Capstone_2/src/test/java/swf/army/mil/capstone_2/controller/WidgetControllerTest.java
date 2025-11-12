@@ -9,11 +9,8 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
-import swf.army.mil.capstone_2.entity.Widget;
 import swf.army.mil.capstone_2.service.WidgetService;
 
-
-import java.util.Optional;
 
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
@@ -57,15 +54,6 @@ public class WidgetControllerTest {
         void shouldAcceptDeleteRequest() throws Exception {
             mvc.perform(delete("/api/widget/{id}", 1L))
                     .andExpect(status().isOk());
-        }
-
-        @Test
-        void shouldReturnCopyOfDeletedWidget() throws Exception {
-            Widget testWidget = new Widget(1L, "banana", "more banana", "Even more bananas", 2.50, 4.0);
-            when(mockWidgetService.deleteWidgetById(1L)).thenReturn(Optional.of(testWidget));
-            mvc.perform(delete("/api/widget/{id}", 1L))
-                    .andExpect(status().isOk());
-            verify(mockWidgetService, times(1)).deleteWidgetById(1L);
         }
     }
 

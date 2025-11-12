@@ -1,48 +1,71 @@
-import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
-import {Button, Form} from "react-bootstrap";
+import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
+import { Button } from "react-bootstrap";
+import { useState } from "react";
+import { deleteWidget } from "../util/WidgetClient.ts";
+import type { Widget } from "../util/Widget.ts";
+import * as React from "react";
 
-import {useState} from "react";
-import {deleteWidget} from "../util/WidgetClient.ts";
-import type {Widget} from "../util/Widget.ts";
-
-export const DeleteWidgetModal = (widget: Widget) => {
-
-    const {name} = widget;
+interface DeleteWidgetProps {
+    widget: Widget,
+}
+export const DeleteWidgetModal = ({widget}: DeleteWidgetProps ) => {
+    const { name, id } = widget;
 
     const [warningModal, setWarningModal] = useState(false);
+    const [inputValue, setInputValue] = useState("");
+
     const toggle = () => setWarningModal(!warningModal);
 
-    const onConfirm = (widget: Widget) => {
-        deleteWidget(widget).then(r => console.log(r));
+    const handleDelete = () => {
+        deleteWidget(id);
+        console.log(`${widget.name} deleted.`);
         toggle(); // Close modal
     };
 
-    const handleDelete = (widget: Widget) => {
-        deleteWidget(widget).then(r => console.log(`${widget.name} deleted.` + r))
-    }
-    const handleChange = (event: any) => {
-        console.log(`${event.target.name}: ${event.target.value}`) ;
-    }
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setInputValue(event.target.value);
+    };
 
+    const handleConfirm = () => {
+        if (inputValue === name) {
+            handleDelete();
+        } else {
+            console.error("Widget name does not match.");
+        }
+    };
 
     return (
-        <>
-            <button onClick={toggle}>Destroy This Widget
-            </button>
+        <div className={'bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700'}>
+            <button onClick={toggle}>Destroy</button>
             <Modal isOpen={warningModal} toggle={toggle}>
                 <ModalHeader toggle={toggle}>
                     Confirmation to Destroy
                 </ModalHeader>
-                <div className="col-md-6">
-                    <label htmlFor="widget_name" className="form-label">To confirm, retype the name: {name}</label>
-                    <input type="text" className="form-control" id="widget_name" placeholder={`${name}`} onChange={handleChange} />
-                </div>
+                <ModalBody>
+                    <div className="col-md-6">
+                        <label htmlFor="widget_name" className="form-label">
+                            To confirm, retype the name: <br />
+                            <span className={'text-bg-danger'}>{name}</span>
+                        </label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="widget_name"
+                            placeholder={`${name}`}
+                            value={inputValue}
+                            onChange={handleChange}
+                        />
+                    </div>
+                </ModalBody>
                 <ModalFooter>
-                    <Button color="secondary" onClick={toggle}>
+                    <Button onClick={handleConfirm}>
+                        Confirm
+                    </Button>
+                    <Button onClick={toggle}>
                         Cancel
                     </Button>
                 </ModalFooter>
             </Modal>
-        </>
-    )
-}
+        </div>
+    );
+};

@@ -38,12 +38,7 @@ public class WidgetService {
         widgetRepository.save(updatedWidget);
     }
 
-    public Optional<Widget> deleteWidgetById(Long l) throws NoSuchElementException {
-        Optional<Widget> foundWidget = getWidgetById(l);
-        if (foundWidget != null) {
+    public void deleteWidgetById(Long l) throws NoSuchElementException {
             widgetRepository.deleteById(l);
-            return foundWidget;
-        }
-        return null;
     }
 }

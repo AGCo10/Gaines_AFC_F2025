@@ -20,7 +20,7 @@ export const MyNavbar = ()=> {
     })
 
     return (
-        <Navbar expand="lg" className="bg-body-tertiary col-lg-12">
+        <Navbar expand="lg" className="Navbar bg-body-tertiary col-12">
             <Container fluid>
                 <Navbar.Brand><img src={HammerAndAnvil} className={"Brand-Image"} alt="Hammer and Anvil"/></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />

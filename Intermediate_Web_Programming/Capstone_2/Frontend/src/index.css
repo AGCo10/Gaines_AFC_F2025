@@ -17,6 +17,17 @@ a, .highlight {
     color: var(--accent-color);
 }
 
+body {
+    border-radius: 100px;
+    animation: placeholder-glow 3s infinite alternate;
+}
+
+@keyframes placeholder-glow {
+    0% { box-shadow: 0 0 5px var(--secondary-color), 0 0 10px var(--background-color); }
+    50% { box-shadow: 0 25px 10px var(--accent-color), 0 25px 20px var(--accent-color); }
+    100% { box-shadow: 5px 50px 50px var(--secondary-color), 10px 10px 10px var(--background-color); }
+}
+
 body, footer {
     background-color: var(--background-color);
     color: var(--text-color);
@@ -36,6 +47,11 @@ p, h1, h2, h3 {
     border: solid red 2px;
 }
 
+.Navbar {
+    position: fixed;
+    top: 0;
+}
+
 .Brand-Image {
     width: 100px !important;
     height: 100px !important;
@@ -50,10 +66,11 @@ p, h1, h2, h3 {
 .Forge-Button {
     position: relative;
     padding: 12px 24px;
+    margin-bottom: 50px;
     color: var(--text-color);
     background-color: var(--secondary-color);
     border: 2px solid var(--border-color);
-    border-radius: 50px 120px 120px 50px; /* Adjust the value for more or less rounding */
+    border-radius: 50%;
     font-size: 16px;
     text-transform: uppercase;
     cursor: pointer;
@@ -79,11 +96,11 @@ p, h1, h2, h3 {
 }
 
 .Brightforge-Logo {
-    border-radius: 50px 120px 120px 50px; /* Adjust the value for more or less rounding */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-    overflow: hidden; /* Ensures any overflow is clipped */
-    max-width: 100%; /* Responsive width */
-    height: auto; /* Maintains aspect ratio */
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
 }
 
 .promotion-banner {
@@ -106,4 +123,29 @@ p, h1, h2, h3 {
 
 .hidden {
     display: none; /* Hide the banner when not active */
+}
+
+.Create-Button {
+    position: relative;
+    padding: 12px 24px;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    border: 2px solid var(--border-color);
+    z-index: -1;
+    border-radius: 500px;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: url("assets/forge-hammer.jpg") 5 5, pointer !important;
+    overflow: hidden;
+    transition: color 0.4s ease;
+    box-shadow: 0 0 5px var(--accent-color), 0 0 10px var(--accent-color);
+    animation: flicker 1.5s infinite alternate;
+}
+
+.Create-Modal {
+    background-image: url("assets/forge-hammer.jpg");
+    background-color: var(--background-color);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }

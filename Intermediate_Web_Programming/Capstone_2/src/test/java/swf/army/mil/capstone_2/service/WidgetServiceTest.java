@@ -32,7 +32,7 @@ class WidgetServiceTest {
     @Test
     void getAllWidgets_shouldReturnAllWidget() {
         List<Widget> testWidgets = List.of(
-                new Widget(1L, "banana", "more banana", "Even more bananas", 2.50, 4.0)
+                new Widget(1L, "banana", "more banana", "Even more bananas", 2.50, 4.0, 10)
         );
         when(widgetService.getAllWidgets()).thenReturn(testWidgets);
         List<Widget> validator = widgetService.getAllWidgets();
@@ -49,7 +49,7 @@ class WidgetServiceTest {
 
     @Test
     void getWidgetById_shouldReturnWidget() {
-        Optional<Widget> testWidget = Optional.of(new Widget(1L, "banana", "more banana", "Even more bananas", 2.50, 4.0));
+        Optional<Widget> testWidget = Optional.of(new Widget(1L, "banana", "more banana", "Even more bananas", 2.50, 4.0, 10));
         when(widgetService.getWidgetById(1L)).thenReturn(testWidget);
         Optional<Widget> testValidator = widgetService.getWidgetById(1L);
         assert(testValidator.equals(testWidget));
@@ -58,14 +58,14 @@ class WidgetServiceTest {
 
     @Test
     void saveWidget_shouldCallRepository() {
-        Widget testWidget = new Widget(1L, "banana", "more banana", "Even more bananas", 2.50, 4.0);
+        Widget testWidget = new Widget(1L, "banana", "more banana", "Even more bananas", 2.50, 4.0, 10);
         widgetService.saveWidget(testWidget);
         verify(mockWidgetRepository, times(1)).save(testWidget);
     }
 
     @Test
     void saveWidget_shouldReturnSavedWidget() {
-        Widget testWidget = new Widget(1L, "banana", "more banana", "Even more bananas", 2.50, 4.0);
+        Widget testWidget = new Widget(1L, "banana", "more banana", "Even more bananas", 2.50, 4.0, 10);
         when(mockWidgetRepository.save(testWidget)).thenReturn(testWidget);
         Widget testValidator = widgetService.saveWidget(testWidget);
         assert(testValidator.equals(testWidget));
@@ -75,8 +75,8 @@ class WidgetServiceTest {
 
     @Test
     void updateWidget_shouldUpdateAndReturnWidget() {
-        Widget testWidget = new Widget(1L, "banana", "more banana", "Even more bananas", 2.50, 4.0);
-        Widget updatedWidget = new Widget(1L, "Orange", "Not banana", "Never Is a Banana", 3.50, 4.0);
+        Widget testWidget = new Widget(1L, "banana", "more banana", "Even more bananas", 2.50, 4.0, 10);
+        Widget updatedWidget = new Widget(1L, "Orange", "Not banana", "Never Is a Banana", 3.50, 4.0, 10);
         when(mockWidgetRepository.findById(testWidget.getId())).thenReturn(Optional.of(testWidget));
         widgetService.updateWidget(updatedWidget);
         verify(mockWidgetRepository, times(1)).save(updatedWidget);
@@ -84,13 +84,11 @@ class WidgetServiceTest {
 
     @Test
     void deleteWidget_shouldCallRepository() {
-        Widget testWidget = new Widget(1L, "banana", "more banana", "Even more bananas", 2.50, 4.0);
-        when(mockWidgetRepository.findById(1L)).thenReturn(Optional.of(testWidget));
+        Widget testWidget = new Widget(1L, "banana", "more banana", "Even more bananas", 2.50, 4.0, 10);
 
         widgetService.deleteWidgetById(1L);
 
         verify(mockWidgetRepository, times(1)).deleteById(testWidget.getId());
-        verify(mockWidgetRepository, times(1)).findById(1L);
     }
 
 }

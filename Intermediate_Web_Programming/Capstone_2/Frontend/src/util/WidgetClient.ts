@@ -16,6 +16,6 @@ export const updateWidget = async (widgetToUpdate: Widget): Promise<void> => {
     await axios.patch('/api/widget/'+ widgetToUpdate.id, widgetToUpdate);
 }
 
-export const deleteWidget = async (widgetToDelete: Widget): Promise<void> => {
-    await axios.delete('/api/widget/'+ widgetToDelete.id);
+export const deleteWidget = async (id: number | undefined) : Promise<void> => {
+    await axios.delete('/api/widget/'+ id);
 }

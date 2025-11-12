@@ -60,13 +60,13 @@ export const CreateWidgetModal = () => {
 
     return (
         <>
-            <button onClick={toggle}>Forge a Widget
+            <button className={'Create-Button m-auto w-1/4'} onClick={toggle}>Forge a Widget
             </button>
             <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader toggle={toggle}>
                     Build A Widget
                 </ModalHeader>
-                <ModalBody className={"form-body col-12"}>
+                <ModalBody className={"Create-Modal form-body col-12"}>
                     <Form onSubmit={handleSubmit(onSubmit)} id="widget_builder" className="row g-3 form-body">
                         <div className="col-md-6">
                             <label htmlFor="widget_name" className="form-label">Widget Name</label>
