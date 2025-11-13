@@ -13,7 +13,6 @@ interface UpdateWidgetProps {
 export const UpdateWidgetModal = ({widget}: UpdateWidgetProps) => {
     const { name, id, rating, price, description } = widget;
 
-
     const ModalSchema = yup.object({
         id: yup.number(),
         name: yup.string()

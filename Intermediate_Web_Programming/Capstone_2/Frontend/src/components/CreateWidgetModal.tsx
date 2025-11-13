@@ -16,6 +16,7 @@ export const CreateWidgetModal = () => {
             .max(255, "Description may be no more than 255 characters."),
         price: yup.number(),
         rating: yup.number(),
+        quantity: yup.number()
     })
 
     const {
@@ -31,6 +32,7 @@ export const CreateWidgetModal = () => {
             description: '',
             price: 0.0,
             rating: 5.0,
+            quantity: 1
         }
     });
 
@@ -44,6 +46,7 @@ export const CreateWidgetModal = () => {
             description: data.description,
             price: data.price,
             rating: data.rating,
+            quantity: data.quantity
         };
 
         console.log("Submitted widget:", payload);

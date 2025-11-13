@@ -1,5 +1,6 @@
-import {Button, Container, Form, Nav, Navbar} from "react-bootstrap";
+import {Container, Nav, Navbar} from "react-bootstrap";
 import HammerAndAnvil from "../assets/HammerAndAnvil.gif"
+import {useState} from "react";
 
 export const MyNavbar = ()=> {
     const myNavs = [
@@ -11,6 +12,7 @@ export const MyNavbar = ()=> {
             displayName: 'Inventory'
         }
     ];
+    const [banner, showBanner] = useState('hidden');
 
     const myNavLinks = myNavs.map((element,index) => {
         return(
@@ -20,7 +22,7 @@ export const MyNavbar = ()=> {
 
     return (
     <>
-        <Navbar expand="lg" className="Navbar bg-body-tertiary col-12">
+        <Navbar expand="lg" className="grid Navbar bg-body-tertiary col-12">
             <Container fluid>
                 <Navbar.Brand><img src={HammerAndAnvil} className={"Brand-Image"} alt="Hammer and Anvil"/></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
@@ -28,15 +30,14 @@ export const MyNavbar = ()=> {
                     <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
                         {myNavLinks}
                     </Nav>
-                    <Form className="d-flex">
-                        <Form.Control
-                            type="search"
-                            placeholder="Search"
-                            className="me-2"
-                            aria-label="Search"
+                    <div className={'toggle-div'}>
+                        <label className={'toggle-label'} htmlFor={'banner-context'}> Toggle Banner </label>
+                        {/*The Banner will be toggled between true/false*/}
+                        <input type="checkbox" className={'toggle-input'} id={'banner-context'} name={'banner-context'} checked={banner === 'promotion-banner'} onChange={(e) => {
+                            showBanner(e.target.checked ? 'promotion-banner' : 'hidden');
+                        }}
                         />
-                        <Button variant="outline-success">Search</Button>
-                    </Form>
+                    </div>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
