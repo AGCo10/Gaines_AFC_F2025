@@ -1,5 +1,5 @@
 // Practicing UseContext
-// This is a tool to test useContext
+// This is a tool to test useContext. This is not part of the capstone actual.
 
 export const ContextPage = () => {
 

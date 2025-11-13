@@ -5,5 +5,6 @@ export type Widget = {
     name: string,
     description?: string,
     price?: number,
-    rating?: number
+    rating?: number,
+    quantity?: number
 }

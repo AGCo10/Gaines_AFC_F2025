@@ -84,7 +84,7 @@ export const CreateWidgetModal = () => {
                             {errors.price && <span className="text-danger">{errors.price.message}</span>}
                         </div>
                         <div className={'col-12'}>
-                            <Button type="submit" id="widget_submit" className="">Forge
+                            <Button type="submit" id="widget_submit" className="">Forge Widget
                             </Button>
                             <Button type="reset" id="widget_reset" className="">Reset
                             </Button>

@@ -1,7 +1,6 @@
 import {Button, Container, Form, Nav, Navbar} from "react-bootstrap";
 import HammerAndAnvil from "../assets/HammerAndAnvil.gif"
 
-
 export const MyNavbar = ()=> {
     const myNavs = [
         {
@@ -20,6 +19,7 @@ export const MyNavbar = ()=> {
     })
 
     return (
+    <>
         <Navbar expand="lg" className="Navbar bg-body-tertiary col-12">
             <Container fluid>
                 <Navbar.Brand><img src={HammerAndAnvil} className={"Brand-Image"} alt="Hammer and Anvil"/></Navbar.Brand>
@@ -40,5 +40,7 @@ export const MyNavbar = ()=> {
                 </Navbar.Collapse>
             </Container>
         </Navbar>
+
+    </>
     );
 }

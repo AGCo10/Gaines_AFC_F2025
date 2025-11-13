@@ -7,7 +7,7 @@ import {UpdateWidgetModal} from "./UpdateWidgetModal.tsx";
 
 export const Widgets= () => {
 
-
+    const [searchTerm, setSearchTerm] = useState('');
     const [widgets, setWidgets] = useState<Widget[]>([]);
 
     useEffect(() => {
@@ -16,8 +16,18 @@ export const Widgets= () => {
         })();
     }, [])
 
+    const handleSearchChange = (event: any) => {
+        setSearchTerm(event.target.value);
+    }
 
-    const widgetsTabled = widgets.map((element, index) => {
+    // Filter widgets based on search term
+    const filteredWidgets = widgets.filter(widget =>
+        widget.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (widget.description != undefined && widget.description.toLowerCase().includes(searchTerm.toLowerCase()))
+    );
+
+
+    const widgetsTabled = filteredWidgets.map((element, index) => {
         return(
             <div className="h-full w-full rounded overflow-hidden shadow-lg" id={'widget'} key={index}>
                 <img className={'px-2 rounded-4xl'} src={wimsicalWidget} alt={element.name + " image"} />
@@ -39,6 +49,12 @@ export const Widgets= () => {
                             {element.rating}
                         </span>
                     </label>
+                    <label htmlFor="">
+                        Quantity <br />
+                        <span id={"quantity"} className="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
+                            {element.quantity}
+                        </span>
+                    </label>
                 </div>
                 <div className={' flex gap-2 items-center justify-center p-2'}>
                     <UpdateWidgetModal widget={element} />
@@ -50,8 +66,17 @@ export const Widgets= () => {
     });
 
     return (
-        <div role={'widgetTable'} className=" grid m-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {widgetsTabled}
+        <div>
+            <input
+                type="text"
+                placeholder="Search Widgets..."
+                value={searchTerm}
+                onChange={handleSearchChange}
+                className="mb-4 p-2 grid border rounded w-full md:w-1/3"
+            />
+            <div role={'widgetTable'} className="grid m-2 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
+                {widgetsTabled.length > 0 ? widgetsTabled : <p>No widgets found</p>}
+            </div>
         </div>
-    )
+    );
 }

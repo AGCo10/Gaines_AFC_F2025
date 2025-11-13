@@ -23,7 +23,7 @@ public class WidgetController {
     }
 
     private WidgetResponseDTO toDTO(Widget widget) {
-        return new WidgetResponseDTO(widget.getId(), widget.getName(), widget.getDescription(), widget.getPrice(), widget.getRating());
+        return new WidgetResponseDTO(widget.getId(), widget.getName(), widget.getDescription(), widget.getPrice(), widget.getRating(), widget.getQuantity());
     }
 
     // Create or update a widget

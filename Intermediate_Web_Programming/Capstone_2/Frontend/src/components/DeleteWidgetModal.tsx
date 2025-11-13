@@ -58,7 +58,7 @@ export const DeleteWidgetModal = ({widget}: DeleteWidgetProps ) => {
                     </div>
                 </ModalBody>
                 <ModalFooter>
-                    <Button onClick={handleConfirm}>
+                    <Button id={'confirm_delete'} onClick={handleConfirm}>
                         Confirm
                     </Button>
                     <Button onClick={toggle}>
