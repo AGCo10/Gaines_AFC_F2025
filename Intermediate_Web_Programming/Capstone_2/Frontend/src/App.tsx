@@ -3,9 +3,7 @@ import '../src/App.css';
 import {PageHeader} from "./components/PageHeader.tsx";
 import {Outlet} from "react-router-dom";
 
-
 export const App = () => {
-
 
   return (
     <>
@@ -14,6 +12,7 @@ export const App = () => {
         <div>
             <Outlet />
         </div>
+
     </>
   )
 }
