@@ -1,7 +1,7 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
 import HammerAndAnvil from "../assets/HammerAndAnvil.gif";
 import {BannerContext} from "../util/BannerContext.tsx";
-import {useContext, useState} from "react";
+import {useContext} from "react";
 
 export const MyNavbar = () => {
 
